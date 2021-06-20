@@ -33,7 +33,7 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.ColumnHeader columnHeader7;
 		private System.Windows.Forms.ColumnHeader columnHeader8;
 		private System.Windows.Forms.ColumnHeader columnHeader9;
-		private System.Windows.Forms.ListView listView1;
+		public System.Windows.Forms.ListView listView1;
 		private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem abrirRecienteToolStripMenuItem;
@@ -56,6 +56,14 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.ColumnHeader columnHeader13;
 		private System.Windows.Forms.ColumnHeader columnHeader14;
 		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.ColumnHeader columnHeader15;
+		private System.Windows.Forms.ColumnHeader columnHeader16;
+		private System.Windows.Forms.ColumnHeader columnHeader17;
+		private System.Windows.Forms.ColumnHeader columnHeader18;
+		private System.Windows.Forms.ColumnHeader columnHeader19;
+		private System.Windows.Forms.ColumnHeader columnHeader20;
+		private System.Windows.Forms.ColumnHeader columnHeader21;
+		private System.Windows.Forms.ColumnHeader columnHeader22;
 
 		
 		protected override void Dispose(bool disposing)
@@ -70,6 +78,15 @@ namespace CatalogadorArchivos
 		
 		void InitializeComponent(){
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Nodo1");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Nodo2");
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Nodo3");
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Nodo4");
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Nodo0", new System.Windows.Forms.TreeNode[] {
+			treeNode1,
+			treeNode2,
+			treeNode3,
+			treeNode4});
 			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Nodo1");
 			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Nodo0", new System.Windows.Forms.TreeNode[] {
 			treeNode6});
@@ -87,15 +104,6 @@ namespace CatalogadorArchivos
 			System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Nodo10");
 			System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Nodo9", new System.Windows.Forms.TreeNode[] {
 			treeNode15});
-			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Nodo1");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Nodo2");
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Nodo3");
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Nodo4");
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Nodo0", new System.Windows.Forms.TreeNode[] {
-			treeNode1,
-			treeNode2,
-			treeNode3,
-			treeNode4});
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.archivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,11 +117,16 @@ namespace CatalogadorArchivos
 			this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.treeView2 = new System.Windows.Forms.TreeView();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.listView1 = new System.Windows.Forms.ListView();
 			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -124,20 +137,23 @@ namespace CatalogadorArchivos
 			this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader21 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
 			this.splitContainer3 = new System.Windows.Forms.SplitContainer();
 			this.treeView1 = new System.Windows.Forms.TreeView();
-			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.listView2 = new System.Windows.Forms.ListView();
 			this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader13 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
-			this.treeView2 = new System.Windows.Forms.TreeView();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.menuStrip1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -263,6 +279,31 @@ namespace CatalogadorArchivos
 			this.toolStripSplitButton1.Text = "toolStripSplitButton1";
 			this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
 			// 
+			// toolStripButton1
+			// 
+			this.toolStripButton1.AutoSize = false;
+			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton1.Name = "toolStripButton1";
+			this.toolStripButton1.Size = new System.Drawing.Size(44, 44);
+			this.toolStripButton1.Text = "toolStripButton1";
+			// 
+			// toolStripButton2
+			// 
+			this.toolStripButton2.AutoSize = false;
+			this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+			this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton2.Name = "toolStripButton2";
+			this.toolStripButton2.Size = new System.Drawing.Size(44, 44);
+			this.toolStripButton2.Text = "toolStripButton2";
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 44);
+			// 
 			// splitContainer1
 			// 
 			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -280,7 +321,6 @@ namespace CatalogadorArchivos
 			this.splitContainer1.Size = new System.Drawing.Size(1228, 548);
 			this.splitContainer1.SplitterDistance = 301;
 			this.splitContainer1.TabIndex = 2;
-			this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
 			// 
 			// splitContainer2
 			// 
@@ -291,7 +331,6 @@ namespace CatalogadorArchivos
 			// splitContainer2.Panel1
 			// 
 			this.splitContainer2.Panel1.Controls.Add(this.tabControl1);
-			this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
 			// 
 			// splitContainer2.Panel2
 			// 
@@ -323,15 +362,45 @@ namespace CatalogadorArchivos
 			this.tabPage1.Text = "Categorías";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
+			// treeView2
+			// 
+			this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.treeView2.ItemHeight = 32;
+			this.treeView2.Location = new System.Drawing.Point(3, 3);
+			this.treeView2.Name = "treeView2";
+			treeNode1.Name = "Nodo1";
+			treeNode1.Text = "Nodo1";
+			treeNode2.Name = "Nodo2";
+			treeNode2.Text = "Nodo2";
+			treeNode3.Name = "Nodo3";
+			treeNode3.Text = "Nodo3";
+			treeNode4.Name = "Nodo4";
+			treeNode4.Text = "Nodo4";
+			treeNode5.Name = "Nodo0";
+			treeNode5.Text = "Nodo0";
+			this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+			treeNode5});
+			this.treeView2.Size = new System.Drawing.Size(515, 269);
+			this.treeView2.TabIndex = 0;
+			// 
 			// tabPage2
 			// 
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(521, 286);
+			this.tabPage2.Size = new System.Drawing.Size(521, 275);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Locaciones";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// tabPage3
+			// 
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Size = new System.Drawing.Size(521, 275);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "Contactos";
+			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
 			// listView1
 			// 
@@ -344,7 +413,15 @@ namespace CatalogadorArchivos
 			this.columnHeader6,
 			this.columnHeader7,
 			this.columnHeader8,
-			this.columnHeader9});
+			this.columnHeader9,
+			this.columnHeader15,
+			this.columnHeader16,
+			this.columnHeader17,
+			this.columnHeader18,
+			this.columnHeader19,
+			this.columnHeader20,
+			this.columnHeader21,
+			this.columnHeader22});
 			this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listView1.GridLines = true;
 			this.listView1.Location = new System.Drawing.Point(0, 0);
@@ -394,6 +471,38 @@ namespace CatalogadorArchivos
 			// columnHeader9
 			// 
 			this.columnHeader9.Text = "Numero de serie";
+			// 
+			// columnHeader15
+			// 
+			this.columnHeader15.Text = "Tipo";
+			// 
+			// columnHeader16
+			// 
+			this.columnHeader16.Text = "Etiqueta";
+			// 
+			// columnHeader17
+			// 
+			this.columnHeader17.Text = "Categoría";
+			// 
+			// columnHeader18
+			// 
+			this.columnHeader18.Text = "Locación";
+			// 
+			// columnHeader19
+			// 
+			this.columnHeader19.Text = "Préstamo";
+			// 
+			// columnHeader20
+			// 
+			this.columnHeader20.Text = "Fecha de escaneo";
+			// 
+			// columnHeader21
+			// 
+			this.columnHeader21.Text = "Letra de Dispositivo";
+			// 
+			// columnHeader22
+			// 
+			this.columnHeader22.Text = "Comentario";
 			// 
 			// splitContainer3
 			// 
@@ -449,27 +558,6 @@ namespace CatalogadorArchivos
 			this.treeView1.Size = new System.Drawing.Size(409, 243);
 			this.treeView1.TabIndex = 0;
 			// 
-			// tableLayoutPanel1
-			// 
-			this.tableLayoutPanel1.ColumnCount = 2;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 4;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-			this.tableLayoutPanel1.TabIndex = 0;
-			// 
 			// listView2
 			// 
 			this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -512,60 +600,26 @@ namespace CatalogadorArchivos
 			this.columnHeader14.Text = "Comentario";
 			this.columnHeader14.Width = 300;
 			// 
-			// treeView2
+			// tableLayoutPanel1
 			// 
-			this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.treeView2.ItemHeight = 32;
-			this.treeView2.Location = new System.Drawing.Point(3, 3);
-			this.treeView2.Name = "treeView2";
-			treeNode1.Name = "Nodo1";
-			treeNode1.Text = "Nodo1";
-			treeNode2.Name = "Nodo2";
-			treeNode2.Text = "Nodo2";
-			treeNode3.Name = "Nodo3";
-			treeNode3.Text = "Nodo3";
-			treeNode4.Name = "Nodo4";
-			treeNode4.Text = "Nodo4";
-			treeNode5.Name = "Nodo0";
-			treeNode5.Text = "Nodo0";
-			this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-			treeNode5});
-			this.treeView2.Size = new System.Drawing.Size(515, 269);
-			this.treeView2.TabIndex = 0;
-			// 
-			// tabPage3
-			// 
-			this.tabPage3.Location = new System.Drawing.Point(4, 22);
-			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(521, 286);
-			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "Contactos";
-			this.tabPage3.UseVisualStyleBackColor = true;
-			// 
-			// toolStripButton1
-			// 
-			this.toolStripButton1.AutoSize = false;
-			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton1.Name = "toolStripButton1";
-			this.toolStripButton1.Size = new System.Drawing.Size(44, 44);
-			this.toolStripButton1.Text = "toolStripButton1";
-			// 
-			// toolStripButton2
-			// 
-			this.toolStripButton2.AutoSize = false;
-			this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-			this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton2.Name = "toolStripButton2";
-			this.toolStripButton2.Size = new System.Drawing.Size(44, 44);
-			this.toolStripButton2.Text = "toolStripButton2";
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 44);
+			this.tableLayoutPanel1.ColumnCount = 2;
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+			this.tableLayoutPanel1.RowCount = 4;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// MainForm
 			// 
