@@ -19,7 +19,6 @@ namespace CatalogadorArchivos
 		public System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		public System.Windows.Forms.TextBox txtUbicacion;
-		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.ComboBox comboBox2;
 		private System.Windows.Forms.Label label4;
@@ -41,6 +40,7 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.Label label19;
 		public System.Windows.Forms.Label lblTamanoValor;
+		public System.Windows.Forms.TextBox txtComentario;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -83,7 +83,7 @@ namespace CatalogadorArchivos
 			this.label10 = new System.Windows.Forms.Label();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.txtUbicacion = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtComentario = new System.Windows.Forms.TextBox();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.label17 = new System.Windows.Forms.Label();
@@ -281,13 +281,14 @@ namespace CatalogadorArchivos
 			this.txtUbicacion.Size = new System.Drawing.Size(512, 20);
 			this.txtUbicacion.TabIndex = 4;
 			// 
-			// textBox2
+			// txtComentario
 			// 
-			this.textBox2.Location = new System.Drawing.Point(96, 248);
-			this.textBox2.Multiline = true;
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(232, 88);
-			this.textBox2.TabIndex = 4;
+			this.txtComentario.AccessibleName = "txtComentario";
+			this.txtComentario.Location = new System.Drawing.Point(96, 248);
+			this.txtComentario.Multiline = true;
+			this.txtComentario.Name = "txtComentario";
+			this.txtComentario.Size = new System.Drawing.Size(232, 88);
+			this.txtComentario.TabIndex = 4;
 			// 
 			// comboBox1
 			// 
@@ -341,7 +342,7 @@ namespace CatalogadorArchivos
 			this.ClientSize = new System.Drawing.Size(659, 371);
 			this.Controls.Add(this.comboBox2);
 			this.Controls.Add(this.comboBox1);
-			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.txtComentario);
 			this.Controls.Add(this.txtUbicacion);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.groupBox2);
