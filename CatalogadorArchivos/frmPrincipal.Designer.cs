@@ -71,9 +71,9 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.ToolStripMenuItem tsmiIconosPequenos;
 		private System.Windows.Forms.ToolStripMenuItem tsmiLista;
 		private System.Windows.Forms.ToolStripMenuItem tsmiIconos;
-		private System.Windows.Forms.ToolStripButton tssbBuscar;
 		private System.Windows.Forms.ToolStripSplitButton tssbEscanearDisco;
 		private System.Windows.Forms.ImageList imageList2;
+		private System.Windows.Forms.ToolStripButton tssbBuscar;
 
 		
 		protected override void Dispose(bool disposing)
@@ -767,6 +767,6 @@ namespace CatalogadorArchivos
 			this.PerformLayout();
 
 		}
+		}
 	}
-}
 	
