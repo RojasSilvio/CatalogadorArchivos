@@ -262,6 +262,12 @@ namespace CatalogadorArchivos
 		{
 			listView2.View = View.Details;
 		}
+		void tssbBuscar_Click(object sender, EventArgs e)
+		{
+			frmBuscar oFrmBuscar = new frmBuscar();
+			
+			oFrmBuscar.ShowDialog();
+		}
 		
 		
 	}

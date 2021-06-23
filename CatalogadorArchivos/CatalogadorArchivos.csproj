@@ -52,6 +52,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBuscar.cs" />
+    <Compile Include="frmBuscar.Designer.cs">
+      <DependentUpon>frmBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEscaneandoCarpeta.cs" />
     <Compile Include="frmEscaneandoCarpeta.Designer.cs">
       <DependentUpon>frmEscaneandoCarpeta.cs</DependentUpon>
@@ -74,6 +78,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmBuscar.resx">
+      <DependentUpon>frmBuscar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEscaneandoCarpeta.resx">
       <DependentUpon>frmEscaneandoCarpeta.cs</DependentUpon>
     </EmbeddedResource>

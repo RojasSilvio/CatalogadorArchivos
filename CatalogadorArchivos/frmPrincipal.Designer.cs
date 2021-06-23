@@ -71,7 +71,7 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.ToolStripMenuItem tsmiIconosPequenos;
 		private System.Windows.Forms.ToolStripMenuItem tsmiLista;
 		private System.Windows.Forms.ToolStripMenuItem tsmiIconos;
-		private System.Windows.Forms.ToolStripButton toolStripButton4;
+		private System.Windows.Forms.ToolStripButton tssbBuscar;
 		private System.Windows.Forms.ToolStripSplitButton tssbEscanearDisco;
 		private System.Windows.Forms.ImageList imageList2;
 
@@ -138,7 +138,7 @@ namespace CatalogadorArchivos
 			this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+			this.tssbBuscar = new System.Windows.Forms.ToolStripButton();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -290,7 +290,7 @@ namespace CatalogadorArchivos
 			this.toolStripButton2,
 			this.toolStripSeparator1,
 			this.toolStripButton3,
-			this.toolStripButton4});
+			this.tssbBuscar});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 27);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(1228, 44);
@@ -344,15 +344,16 @@ namespace CatalogadorArchivos
 			this.toolStripButton3.Size = new System.Drawing.Size(41, 41);
 			this.toolStripButton3.Text = "toolStripButton3";
 			// 
-			// toolStripButton4
+			// tssbBuscar
 			// 
-			this.toolStripButton4.AutoSize = false;
-			this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-			this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton4.Name = "toolStripButton4";
-			this.toolStripButton4.Size = new System.Drawing.Size(41, 41);
-			this.toolStripButton4.Text = "toolStripButton4";
+			this.tssbBuscar.AutoSize = false;
+			this.tssbBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tssbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("tssbBuscar.Image")));
+			this.tssbBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.tssbBuscar.Name = "tssbBuscar";
+			this.tssbBuscar.Size = new System.Drawing.Size(41, 41);
+			this.tssbBuscar.Text = "Buscar";
+			this.tssbBuscar.Click += new System.EventHandler(this.tssbBuscar_Click);
 			// 
 			// splitContainer1
 			// 
