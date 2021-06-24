@@ -45,6 +45,7 @@ namespace CatalogadorArchivos
 			String[] rutas = Directory.GetFiles(oSeleccionarCarpeta.SelectedPath, "*", SearchOption.AllDirectories);
 			String[] directorios = Directory.GetDirectories(oSeleccionarCarpeta.SelectedPath, "*", SearchOption.AllDirectories);
 			int dirs = Directory.GetDirectories(oSeleccionarCarpeta.SelectedPath, "*", SearchOption.AllDirectories).Length;
+			
 			DirectoryInfo informacionDirectorio = new DirectoryInfo(oSeleccionarCarpeta.SelectedPath);
 			DriveInfo informacionDispositivo = new DriveInfo(oSeleccionarCarpeta.SelectedPath);
 			var ofrmEscaneoCarpeta = new frmEscaneandoCarpeta();
@@ -124,7 +125,20 @@ namespace CatalogadorArchivos
 			
  
 		}
-		
+		private TreeNode crearArbol(DirectoryInfo directoryInfo)
+		{
+			TreeNode treeNode = new TreeNode(directoryInfo.Name);
+
+			foreach (var item in directoryInfo.GetDirectories())
+			{
+				treeNode.Nodes.Add(crearArbol(item));
+			}
+			foreach (var item in directoryInfo.GetFiles())
+			{
+				treeNode.Nodes.Add(new TreeNode(item.Name));
+			}
+			return treeNode;
+		}
 		private static long GetDirectorySize(string p)
 		{
 			// 1.
