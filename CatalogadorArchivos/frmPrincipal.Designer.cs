@@ -39,7 +39,7 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.ToolStripMenuItem limpiarBaseDeDatosToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem compactarBaseDeDatosToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem informaciónDeBaseDeDatosToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tsmiSalir;
 		private System.Windows.Forms.TreeView treeView1;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
@@ -134,7 +134,7 @@ namespace CatalogadorArchivos
 			this.limpiarBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.compactarBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.informaciónDeBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiSalir = new System.Windows.Forms.ToolStripMenuItem();
 			this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -231,7 +231,7 @@ namespace CatalogadorArchivos
 			this.limpiarBaseDeDatosToolStripMenuItem,
 			this.compactarBaseDeDatosToolStripMenuItem,
 			this.informaciónDeBaseDeDatosToolStripMenuItem,
-			this.salirToolStripMenuItem});
+			this.tsmiSalir});
 			this.archivosToolStripMenuItem.Name = "archivosToolStripMenuItem";
 			this.archivosToolStripMenuItem.Size = new System.Drawing.Size(73, 23);
 			this.archivosToolStripMenuItem.Text = "Archivos";
@@ -272,11 +272,12 @@ namespace CatalogadorArchivos
 			this.informaciónDeBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(263, 24);
 			this.informaciónDeBaseDeDatosToolStripMenuItem.Text = "Información de Base de Datos";
 			// 
-			// salirToolStripMenuItem
+			// tsmiSalir
 			// 
-			this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-			this.salirToolStripMenuItem.Size = new System.Drawing.Size(263, 24);
-			this.salirToolStripMenuItem.Text = "Salir";
+			this.tsmiSalir.Name = "tsmiSalir";
+			this.tsmiSalir.Size = new System.Drawing.Size(263, 24);
+			this.tsmiSalir.Text = "Salir";
+			this.tsmiSalir.Click += new System.EventHandler(this.tsmiSalir_Click);
 			// 
 			// verToolStripMenuItem
 			// 
@@ -293,7 +294,7 @@ namespace CatalogadorArchivos
 			// toolStrip1
 			// 
 			this.toolStrip1.AutoSize = false;
-			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
+			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.tssbEscanearDisco,
 			this.tssbPropiedades,

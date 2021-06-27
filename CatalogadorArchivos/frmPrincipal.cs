@@ -255,7 +255,7 @@ namespace CatalogadorArchivos
 			toolStrip1.ImageScalingSize = new Size(30, 30);
 			if (File.Exists("Grupo6.accdb")){
 				RefrescaEscaneos();
-//				PopulateTreeNode2(
+				Text += " - " + Path.GetFullPath("Grupo6.accdb");
 			}
 			
 		}
@@ -298,6 +298,10 @@ namespace CatalogadorArchivos
 				tssbPropiedades.Enabled = false;
 				tssbEliminar.Enabled = false;
 			}
+		}
+		void tsmiSalir_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 		
 		

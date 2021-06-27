@@ -45,7 +45,7 @@ namespace CatalogadorArchivos
 				lblNumeroSerieUnidad.Text = row["NUMEROSERIE"].ToString();
 				lblIDEscaneo.Text = row["ID_ESCANEO"].ToString();
 				txtUbicacion.Text = row["NOMBRE"].ToString();
-				lblContenidoDispositivoValor.Text = row["ARCHIVOS"].ToString() + " Archivos, " + row["CARPETAS"].ToString() + "Carpetas";
+				lblContenidoDispositivoValor.Text = row["ARCHIVOS"].ToString() + " Archivos, " + row["CARPETAS"].ToString() + " Carpetas";
 				lblTamanoValor.Text = FormatSizeExtended(Convert.ToInt64(row["TAMANO"]));
 				lblCapacidadDispositivoValor.Text = FormatSizeExtended(Convert.ToInt64(row["CAPACIDAD"]));
 				lblEspacioLibreDispositivoValor.Text = FormatSizeExtended(Convert.ToInt64(row["ESPACIOLIBRE"]));
