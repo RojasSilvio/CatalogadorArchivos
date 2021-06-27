@@ -19,15 +19,31 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.CheckBox checkBox6;
-		private System.Windows.Forms.CheckBox checkBox4;
-		private System.Windows.Forms.CheckBox checkBox5;
-		private System.Windows.Forms.CheckBox checkBox3;
-		private System.Windows.Forms.CheckBox checkBox2;
-		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.CheckBox chkSoloLectura;
+		private System.Windows.Forms.CheckBox chkComprimido;
+		private System.Windows.Forms.CheckBox chkSistema;
+		private System.Windows.Forms.CheckBox chkArchivado;
+		private System.Windows.Forms.CheckBox chkOculto;
+		private System.Windows.Forms.CheckBox chkEncriptado;
 		public System.Windows.Forms.TextBox txtComentario;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.Label lblAtributos;
+		private System.Windows.Forms.Label lblComentario;
+		public System.Windows.Forms.Label lblNombreValor;
+		private System.Windows.Forms.Label lblNombre;
+		private System.Windows.Forms.Label lblTipo;
+		public System.Windows.Forms.TextBox txtUbicacion;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Label lblAccedidoValor;
+		private System.Windows.Forms.Label lblModificadoValor;
+		private System.Windows.Forms.Label lblCreadoValor;
+		private System.Windows.Forms.Label lblAccedido;
+		private System.Windows.Forms.Label lblModificado;
+		private System.Windows.Forms.Label lblCreado;
+		private System.Windows.Forms.Label lblRuta;
+		public System.Windows.Forms.Label lblTamanoValor;
+		public System.Windows.Forms.Label lblRutaValor;
+		public System.Windows.Forms.Label lblTipoValor;
+		private System.Windows.Forms.Label lblTamano;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -51,58 +67,178 @@ namespace CatalogadorArchivos
 		private void InitializeComponent()
 		{
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.chkSoloLectura = new System.Windows.Forms.CheckBox();
+			this.chkComprimido = new System.Windows.Forms.CheckBox();
+			this.chkSistema = new System.Windows.Forms.CheckBox();
+			this.chkArchivado = new System.Windows.Forms.CheckBox();
+			this.chkOculto = new System.Windows.Forms.CheckBox();
+			this.chkEncriptado = new System.Windows.Forms.CheckBox();
+			this.txtComentario = new System.Windows.Forms.TextBox();
+			this.lblAtributos = new System.Windows.Forms.Label();
+			this.lblComentario = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
-			this.txtComentario = new System.Windows.Forms.TextBox();
-			this.label17 = new System.Windows.Forms.Label();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.checkBox3 = new System.Windows.Forms.CheckBox();
-			this.checkBox4 = new System.Windows.Forms.CheckBox();
-			this.checkBox5 = new System.Windows.Forms.CheckBox();
-			this.checkBox6 = new System.Windows.Forms.CheckBox();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblNombreValor = new System.Windows.Forms.Label();
+			this.lblNombre = new System.Windows.Forms.Label();
+			this.lblTipo = new System.Windows.Forms.Label();
+			this.txtUbicacion = new System.Windows.Forms.TextBox();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.lblCreado = new System.Windows.Forms.Label();
+			this.lblModificado = new System.Windows.Forms.Label();
+			this.lblAccedido = new System.Windows.Forms.Label();
+			this.lblCreadoValor = new System.Windows.Forms.Label();
+			this.lblModificadoValor = new System.Windows.Forms.Label();
+			this.lblAccedidoValor = new System.Windows.Forms.Label();
+			this.lblTamano = new System.Windows.Forms.Label();
+			this.lblRuta = new System.Windows.Forms.Label();
+			this.lblTamanoValor = new System.Windows.Forms.Label();
+			this.lblTipoValor = new System.Windows.Forms.Label();
+			this.lblRutaValor = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
+			this.groupBox2.SuspendLayout();
+			this.groupBox3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.checkBox6);
-			this.groupBox1.Controls.Add(this.checkBox4);
-			this.groupBox1.Controls.Add(this.checkBox5);
-			this.groupBox1.Controls.Add(this.checkBox3);
-			this.groupBox1.Controls.Add(this.checkBox2);
-			this.groupBox1.Controls.Add(this.checkBox1);
+			this.groupBox1.Controls.Add(this.chkSoloLectura);
+			this.groupBox1.Controls.Add(this.chkComprimido);
+			this.groupBox1.Controls.Add(this.chkSistema);
+			this.groupBox1.Controls.Add(this.chkArchivado);
+			this.groupBox1.Controls.Add(this.chkOculto);
+			this.groupBox1.Controls.Add(this.chkEncriptado);
 			this.groupBox1.Controls.Add(this.txtComentario);
-			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Controls.Add(this.label17);
-			this.groupBox1.Location = new System.Drawing.Point(16, 264);
+			this.groupBox1.Controls.Add(this.lblAtributos);
+			this.groupBox1.Controls.Add(this.lblComentario);
+			this.groupBox1.Location = new System.Drawing.Point(16, 320);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(352, 168);
+			this.groupBox1.Size = new System.Drawing.Size(360, 168);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			// 
+			// chkSoloLectura
+			// 
+			this.chkSoloLectura.Enabled = false;
+			this.chkSoloLectura.Location = new System.Drawing.Point(256, 40);
+			this.chkSoloLectura.Name = "chkSoloLectura";
+			this.chkSoloLectura.Size = new System.Drawing.Size(96, 24);
+			this.chkSoloLectura.TabIndex = 10;
+			this.chkSoloLectura.Text = "Solo lectura";
+			this.chkSoloLectura.UseVisualStyleBackColor = true;
+			// 
+			// chkComprimido
+			// 
+			this.chkComprimido.Enabled = false;
+			this.chkComprimido.Location = new System.Drawing.Point(256, 16);
+			this.chkComprimido.Name = "chkComprimido";
+			this.chkComprimido.Size = new System.Drawing.Size(96, 24);
+			this.chkComprimido.TabIndex = 10;
+			this.chkComprimido.Text = "Comprimido";
+			this.chkComprimido.UseVisualStyleBackColor = true;
+			// 
+			// chkSistema
+			// 
+			this.chkSistema.Enabled = false;
+			this.chkSistema.Location = new System.Drawing.Point(176, 40);
+			this.chkSistema.Name = "chkSistema";
+			this.chkSistema.Size = new System.Drawing.Size(80, 24);
+			this.chkSistema.TabIndex = 10;
+			this.chkSistema.Text = "Sistema";
+			this.chkSistema.UseVisualStyleBackColor = true;
+			// 
+			// chkArchivado
+			// 
+			this.chkArchivado.Enabled = false;
+			this.chkArchivado.Location = new System.Drawing.Point(88, 40);
+			this.chkArchivado.Name = "chkArchivado";
+			this.chkArchivado.Size = new System.Drawing.Size(88, 24);
+			this.chkArchivado.TabIndex = 10;
+			this.chkArchivado.Text = "Archivado";
+			this.chkArchivado.UseVisualStyleBackColor = true;
+			// 
+			// chkOculto
+			// 
+			this.chkOculto.Enabled = false;
+			this.chkOculto.Location = new System.Drawing.Point(176, 16);
+			this.chkOculto.Name = "chkOculto";
+			this.chkOculto.Size = new System.Drawing.Size(80, 24);
+			this.chkOculto.TabIndex = 10;
+			this.chkOculto.Text = "Oculto";
+			this.chkOculto.UseVisualStyleBackColor = true;
+			// 
+			// chkEncriptado
+			// 
+			this.chkEncriptado.Enabled = false;
+			this.chkEncriptado.Location = new System.Drawing.Point(88, 16);
+			this.chkEncriptado.Name = "chkEncriptado";
+			this.chkEncriptado.Size = new System.Drawing.Size(88, 24);
+			this.chkEncriptado.TabIndex = 10;
+			this.chkEncriptado.Text = "Encriptado";
+			this.chkEncriptado.UseVisualStyleBackColor = true;
+			// 
+			// txtComentario
+			// 
+			this.txtComentario.AccessibleName = "txtComentario";
+			this.txtComentario.Location = new System.Drawing.Point(88, 72);
+			this.txtComentario.Multiline = true;
+			this.txtComentario.Name = "txtComentario";
+			this.txtComentario.Size = new System.Drawing.Size(264, 88);
+			this.txtComentario.TabIndex = 8;
+			// 
+			// lblAtributos
+			// 
+			this.lblAtributos.Location = new System.Drawing.Point(8, 24);
+			this.lblAtributos.Name = "lblAtributos";
+			this.lblAtributos.Size = new System.Drawing.Size(76, 23);
+			this.lblAtributos.TabIndex = 9;
+			this.lblAtributos.Text = "Atributos:";
+			this.lblAtributos.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			// 
+			// lblComentario
+			// 
+			this.lblComentario.Location = new System.Drawing.Point(8, 72);
+			this.lblComentario.Name = "lblComentario";
+			this.lblComentario.Size = new System.Drawing.Size(76, 23);
+			this.lblComentario.TabIndex = 9;
+			this.lblComentario.Text = "Comentario:";
+			this.lblComentario.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			// 
 			// groupBox2
 			// 
-			this.groupBox2.Location = new System.Drawing.Point(56, 120);
+			this.groupBox2.Controls.Add(this.lblAccedidoValor);
+			this.groupBox2.Controls.Add(this.lblModificadoValor);
+			this.groupBox2.Controls.Add(this.lblCreadoValor);
+			this.groupBox2.Controls.Add(this.lblAccedido);
+			this.groupBox2.Controls.Add(this.lblModificado);
+			this.groupBox2.Controls.Add(this.lblCreado);
+			this.groupBox2.Location = new System.Drawing.Point(16, 200);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(200, 100);
+			this.groupBox2.Size = new System.Drawing.Size(360, 120);
 			this.groupBox2.TabIndex = 0;
 			this.groupBox2.TabStop = false;
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Location = new System.Drawing.Point(72, 56);
+			this.groupBox3.Controls.Add(this.lblRuta);
+			this.groupBox3.Controls.Add(this.lblTipo);
+			this.groupBox3.Controls.Add(this.lblTamanoValor);
+			this.groupBox3.Controls.Add(this.lblRutaValor);
+			this.groupBox3.Controls.Add(this.lblTipoValor);
+			this.groupBox3.Controls.Add(this.lblNombreValor);
+			this.groupBox3.Controls.Add(this.lblTamano);
+			this.groupBox3.Controls.Add(this.lblNombre);
+			this.groupBox3.Location = new System.Drawing.Point(16, 56);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(200, 100);
+			this.groupBox3.Size = new System.Drawing.Size(360, 144);
 			this.groupBox3.TabIndex = 0;
 			this.groupBox3.TabStop = false;
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(200, 440);
+			this.button1.Location = new System.Drawing.Point(200, 496);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 1;
@@ -111,99 +247,150 @@ namespace CatalogadorArchivos
 			// 
 			// button2
 			// 
-			this.button2.Location = new System.Drawing.Point(288, 440);
+			this.button2.Location = new System.Drawing.Point(288, 496);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 1;
 			this.button2.Text = "Cancelar";
 			this.button2.UseVisualStyleBackColor = true;
 			// 
-			// txtComentario
+			// lblNombreValor
 			// 
-			this.txtComentario.AccessibleName = "txtComentario";
-			this.txtComentario.Location = new System.Drawing.Point(88, 72);
-			this.txtComentario.Multiline = true;
-			this.txtComentario.Name = "txtComentario";
-			this.txtComentario.Size = new System.Drawing.Size(248, 88);
-			this.txtComentario.TabIndex = 8;
+			this.lblNombreValor.AccessibleName = "lblTamanoValor";
+			this.lblNombreValor.Location = new System.Drawing.Point(128, 16);
+			this.lblNombreValor.Name = "lblNombreValor";
+			this.lblNombreValor.Size = new System.Drawing.Size(192, 23);
+			this.lblNombreValor.TabIndex = 1;
+			this.lblNombreValor.Text = "label1";
 			// 
-			// label17
+			// lblNombre
 			// 
-			this.label17.Location = new System.Drawing.Point(8, 72);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(76, 23);
-			this.label17.TabIndex = 9;
-			this.label17.Text = "Comentario:";
-			this.label17.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			this.lblNombre.Location = new System.Drawing.Point(12, 16);
+			this.lblNombre.Name = "lblNombre";
+			this.lblNombre.Size = new System.Drawing.Size(100, 23);
+			this.lblNombre.TabIndex = 2;
+			this.lblNombre.Text = "Nombre:";
 			// 
-			// checkBox1
+			// lblTipo
 			// 
-			this.checkBox1.Location = new System.Drawing.Point(88, 16);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(88, 24);
-			this.checkBox1.TabIndex = 10;
-			this.checkBox1.Text = "Encriptado";
-			this.checkBox1.UseVisualStyleBackColor = true;
+			this.lblTipo.Location = new System.Drawing.Point(12, 48);
+			this.lblTipo.Name = "lblTipo";
+			this.lblTipo.Size = new System.Drawing.Size(100, 23);
+			this.lblTipo.TabIndex = 1;
+			this.lblTipo.Text = "Tipo:";
 			// 
-			// checkBox2
+			// txtUbicacion
 			// 
-			this.checkBox2.Location = new System.Drawing.Point(176, 16);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(80, 24);
-			this.checkBox2.TabIndex = 10;
-			this.checkBox2.Text = "Oculto";
-			this.checkBox2.UseVisualStyleBackColor = true;
+			this.txtUbicacion.AccessibleName = "txtUbicacion";
+			this.txtUbicacion.Location = new System.Drawing.Point(64, 24);
+			this.txtUbicacion.Name = "txtUbicacion";
+			this.txtUbicacion.Size = new System.Drawing.Size(312, 20);
+			this.txtUbicacion.TabIndex = 5;
 			// 
-			// checkBox3
+			// pictureBox1
 			// 
-			this.checkBox3.Location = new System.Drawing.Point(88, 40);
-			this.checkBox3.Name = "checkBox3";
-			this.checkBox3.Size = new System.Drawing.Size(88, 24);
-			this.checkBox3.TabIndex = 10;
-			this.checkBox3.Text = "Archivado";
-			this.checkBox3.UseVisualStyleBackColor = true;
+			this.pictureBox1.Location = new System.Drawing.Point(16, 8);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(40, 48);
+			this.pictureBox1.TabIndex = 6;
+			this.pictureBox1.TabStop = false;
 			// 
-			// checkBox4
+			// lblCreado
 			// 
-			this.checkBox4.Location = new System.Drawing.Point(256, 16);
-			this.checkBox4.Name = "checkBox4";
-			this.checkBox4.Size = new System.Drawing.Size(96, 24);
-			this.checkBox4.TabIndex = 10;
-			this.checkBox4.Text = "Comprimido";
-			this.checkBox4.UseVisualStyleBackColor = true;
+			this.lblCreado.Location = new System.Drawing.Point(16, 16);
+			this.lblCreado.Name = "lblCreado";
+			this.lblCreado.Size = new System.Drawing.Size(100, 23);
+			this.lblCreado.TabIndex = 0;
+			this.lblCreado.Text = "Creado:";
 			// 
-			// checkBox5
+			// lblModificado
 			// 
-			this.checkBox5.Location = new System.Drawing.Point(176, 40);
-			this.checkBox5.Name = "checkBox5";
-			this.checkBox5.Size = new System.Drawing.Size(80, 24);
-			this.checkBox5.TabIndex = 10;
-			this.checkBox5.Text = "Sistema";
-			this.checkBox5.UseVisualStyleBackColor = true;
+			this.lblModificado.Location = new System.Drawing.Point(16, 48);
+			this.lblModificado.Name = "lblModificado";
+			this.lblModificado.Size = new System.Drawing.Size(100, 23);
+			this.lblModificado.TabIndex = 1;
+			this.lblModificado.Text = "Modificado:";
 			// 
-			// checkBox6
+			// lblAccedido
 			// 
-			this.checkBox6.Location = new System.Drawing.Point(256, 40);
-			this.checkBox6.Name = "checkBox6";
-			this.checkBox6.Size = new System.Drawing.Size(96, 24);
-			this.checkBox6.TabIndex = 10;
-			this.checkBox6.Text = "Solo lectura";
-			this.checkBox6.UseVisualStyleBackColor = true;
+			this.lblAccedido.Location = new System.Drawing.Point(16, 80);
+			this.lblAccedido.Name = "lblAccedido";
+			this.lblAccedido.Size = new System.Drawing.Size(100, 23);
+			this.lblAccedido.TabIndex = 2;
+			this.lblAccedido.Text = "Accedido:";
 			// 
-			// label1
+			// lblCreadoValor
 			// 
-			this.label1.Location = new System.Drawing.Point(8, 24);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(76, 23);
-			this.label1.TabIndex = 9;
-			this.label1.Text = "Atributos:";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			this.lblCreadoValor.Location = new System.Drawing.Point(120, 16);
+			this.lblCreadoValor.Name = "lblCreadoValor";
+			this.lblCreadoValor.Size = new System.Drawing.Size(100, 23);
+			this.lblCreadoValor.TabIndex = 3;
+			this.lblCreadoValor.Text = "label6";
+			// 
+			// lblModificadoValor
+			// 
+			this.lblModificadoValor.Location = new System.Drawing.Point(120, 48);
+			this.lblModificadoValor.Name = "lblModificadoValor";
+			this.lblModificadoValor.Size = new System.Drawing.Size(100, 23);
+			this.lblModificadoValor.TabIndex = 4;
+			this.lblModificadoValor.Text = "label7";
+			// 
+			// lblAccedidoValor
+			// 
+			this.lblAccedidoValor.Location = new System.Drawing.Point(120, 80);
+			this.lblAccedidoValor.Name = "lblAccedidoValor";
+			this.lblAccedidoValor.Size = new System.Drawing.Size(100, 23);
+			this.lblAccedidoValor.TabIndex = 5;
+			this.lblAccedidoValor.Text = "label8";
+			// 
+			// lblTamano
+			// 
+			this.lblTamano.Location = new System.Drawing.Point(12, 112);
+			this.lblTamano.Name = "lblTamano";
+			this.lblTamano.Size = new System.Drawing.Size(100, 23);
+			this.lblTamano.TabIndex = 2;
+			this.lblTamano.Text = "Tamaño:";
+			// 
+			// lblRuta
+			// 
+			this.lblRuta.Location = new System.Drawing.Point(12, 80);
+			this.lblRuta.Name = "lblRuta";
+			this.lblRuta.Size = new System.Drawing.Size(100, 23);
+			this.lblRuta.TabIndex = 1;
+			this.lblRuta.Text = "Ruta:";
+			// 
+			// lblTamanoValor
+			// 
+			this.lblTamanoValor.Location = new System.Drawing.Point(128, 112);
+			this.lblTamanoValor.Name = "lblTamanoValor";
+			this.lblTamanoValor.Size = new System.Drawing.Size(216, 23);
+			this.lblTamanoValor.TabIndex = 2;
+			this.lblTamanoValor.Text = "label1";
+			// 
+			// lblTipoValor
+			// 
+			this.lblTipoValor.Location = new System.Drawing.Point(128, 48);
+			this.lblTipoValor.Name = "lblTipoValor";
+			this.lblTipoValor.Size = new System.Drawing.Size(216, 23);
+			this.lblTipoValor.TabIndex = 2;
+			this.lblTipoValor.Text = "label1";
+			// 
+			// lblRutaValor
+			// 
+			this.lblRutaValor.AccessibleName = "lblTamanoValor";
+			this.lblRutaValor.Location = new System.Drawing.Point(128, 80);
+			this.lblRutaValor.Name = "lblRutaValor";
+			this.lblRutaValor.Size = new System.Drawing.Size(216, 23);
+			this.lblRutaValor.TabIndex = 1;
+			this.lblRutaValor.Text = "label1";
 			// 
 			// frmPropiedadesArchivos
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(380, 478);
+			this.ClientSize = new System.Drawing.Size(389, 535);
+			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.txtUbicacion);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.groupBox3);
@@ -216,7 +403,11 @@ namespace CatalogadorArchivos
 			this.Text = "Propiedades";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 	}

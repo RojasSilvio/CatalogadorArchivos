@@ -43,8 +43,8 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.TreeView treeView1;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.ToolStripButton toolStripButton1;
-		private System.Windows.Forms.ToolStripButton toolStripButton2;
+		private System.Windows.Forms.ToolStripButton tssbPropiedades;
+		private System.Windows.Forms.ToolStripButton tssbEliminar;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.TreeView treeView2;
 		private System.Windows.Forms.TabPage tabPage3;
@@ -74,6 +74,11 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.ToolStripSplitButton tssbEscanearDisco;
 		private System.Windows.Forms.ImageList imageList2;
 		private System.Windows.Forms.ToolStripButton tssbBuscar;
+		private System.Windows.Forms.ToolStripButton toolStripButton4;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripButton toolStripButton5;
+		private System.Windows.Forms.ToolStripButton toolStripButton6;
+		private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
 
 		
 		protected override void Dispose(bool disposing)
@@ -134,11 +139,16 @@ namespace CatalogadorArchivos
 			this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.tssbEscanearDisco = new System.Windows.Forms.ToolStripSplitButton();
-			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+			this.tssbPropiedades = new System.Windows.Forms.ToolStripButton();
+			this.tssbEliminar = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
 			this.tssbBuscar = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -286,11 +296,16 @@ namespace CatalogadorArchivos
 			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.tssbEscanearDisco,
-			this.toolStripButton1,
-			this.toolStripButton2,
+			this.tssbPropiedades,
+			this.tssbEliminar,
 			this.toolStripSeparator1,
 			this.toolStripButton3,
-			this.tssbBuscar});
+			this.tssbBuscar,
+			this.toolStripButton4,
+			this.toolStripSeparator2,
+			this.toolStripButton5,
+			this.toolStripButton6,
+			this.toolStripComboBox1});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 27);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(1228, 44);
@@ -309,25 +324,28 @@ namespace CatalogadorArchivos
 			this.tssbEscanearDisco.Text = "Escanear disco";
 			this.tssbEscanearDisco.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
 			// 
-			// toolStripButton1
+			// tssbPropiedades
 			// 
-			this.toolStripButton1.AutoSize = false;
-			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton1.Name = "toolStripButton1";
-			this.toolStripButton1.Size = new System.Drawing.Size(44, 44);
-			this.toolStripButton1.Text = "toolStripButton1";
+			this.tssbPropiedades.AutoSize = false;
+			this.tssbPropiedades.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tssbPropiedades.Enabled = false;
+			this.tssbPropiedades.Image = ((System.Drawing.Image)(resources.GetObject("tssbPropiedades.Image")));
+			this.tssbPropiedades.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.tssbPropiedades.Name = "tssbPropiedades";
+			this.tssbPropiedades.Size = new System.Drawing.Size(44, 44);
+			this.tssbPropiedades.Text = "Propiedades";
+			this.tssbPropiedades.Click += new System.EventHandler(this.tssbPropiedades_Click);
 			// 
-			// toolStripButton2
+			// tssbEliminar
 			// 
-			this.toolStripButton2.AutoSize = false;
-			this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-			this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton2.Name = "toolStripButton2";
-			this.toolStripButton2.Size = new System.Drawing.Size(44, 44);
-			this.toolStripButton2.Text = "toolStripButton2";
+			this.tssbEliminar.AutoSize = false;
+			this.tssbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tssbEliminar.Enabled = false;
+			this.tssbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tssbEliminar.Image")));
+			this.tssbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.tssbEliminar.Name = "tssbEliminar";
+			this.tssbEliminar.Size = new System.Drawing.Size(44, 44);
+			this.tssbEliminar.Text = "Eliminar";
 			// 
 			// toolStripSeparator1
 			// 
@@ -351,9 +369,49 @@ namespace CatalogadorArchivos
 			this.tssbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("tssbBuscar.Image")));
 			this.tssbBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.tssbBuscar.Name = "tssbBuscar";
-			this.tssbBuscar.Size = new System.Drawing.Size(41, 41);
+			this.tssbBuscar.Size = new System.Drawing.Size(44, 44);
 			this.tssbBuscar.Text = "Buscar";
 			this.tssbBuscar.Click += new System.EventHandler(this.tssbBuscar_Click);
+			// 
+			// toolStripButton4
+			// 
+			this.toolStripButton4.AutoSize = false;
+			this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+			this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton4.Name = "toolStripButton4";
+			this.toolStripButton4.Size = new System.Drawing.Size(41, 41);
+			this.toolStripButton4.Text = "toolStripButton4";
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 44);
+			// 
+			// toolStripButton5
+			// 
+			this.toolStripButton5.AutoSize = false;
+			this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+			this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton5.Name = "toolStripButton5";
+			this.toolStripButton5.Size = new System.Drawing.Size(41, 41);
+			this.toolStripButton5.Text = "toolStripButton5";
+			// 
+			// toolStripButton6
+			// 
+			this.toolStripButton6.AutoSize = false;
+			this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+			this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton6.Name = "toolStripButton6";
+			this.toolStripButton6.Size = new System.Drawing.Size(41, 41);
+			this.toolStripButton6.Text = "toolStripButton6";
+			// 
+			// toolStripComboBox1
+			// 
+			this.toolStripComboBox1.Name = "toolStripComboBox1";
+			this.toolStripComboBox1.Size = new System.Drawing.Size(121, 44);
 			// 
 			// splitContainer1
 			// 
@@ -483,6 +541,7 @@ namespace CatalogadorArchivos
 			this.listView1.UseCompatibleStateImageBehavior = false;
 			this.listView1.View = System.Windows.Forms.View.Details;
 			this.listView1.ItemActivate += new System.EventHandler(this.listView1_ItemActivate);
+			this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
 			// 
 			// columnHeader1
 			// 

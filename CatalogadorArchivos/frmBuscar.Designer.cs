@@ -14,7 +14,7 @@ namespace CatalogadorArchivos
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		public System.Windows.Forms.ListView listView1;
+		public System.Windows.Forms.ListView lvEncontrados;
 		private System.Windows.Forms.ColumnHeader columnHeader1;
 		private System.Windows.Forms.ColumnHeader columnHeader2;
 		private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -26,19 +26,13 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.ColumnHeader columnHeader9;
 		private System.Windows.Forms.ColumnHeader columnHeader15;
 		private System.Windows.Forms.ColumnHeader columnHeader16;
-		private System.Windows.Forms.ColumnHeader columnHeader17;
-		private System.Windows.Forms.ColumnHeader columnHeader18;
-		private System.Windows.Forms.ColumnHeader columnHeader19;
-		private System.Windows.Forms.ColumnHeader columnHeader20;
-		private System.Windows.Forms.ColumnHeader columnHeader21;
-		private System.Windows.Forms.ColumnHeader columnHeader22;
 		private System.Windows.Forms.ComboBox comboBox2;
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.Label label19;
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.CheckedListBox checkedListBox1;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button btnBuscar;
+		private System.Windows.Forms.Button btnCancelar;
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.CheckBox checkBox2;
 		private System.Windows.Forms.CheckBox checkBox3;
@@ -47,11 +41,32 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.CheckBox checkBox6;
 		private System.Windows.Forms.CheckBox checkBox7;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox txtBuscarPor;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.ComboBox comboBox3;
+		private System.Windows.Forms.DomainUpDown domainUpDown2;
+		private System.Windows.Forms.DomainUpDown domainUpDown1;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.CheckBox checkBox9;
+		private System.Windows.Forms.CheckBox checkBox8;
+		private System.Windows.Forms.DateTimePicker dateTimePicker2;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.ComboBox comboBox4;
+		private System.Windows.Forms.ComboBox comboBox5;
+		private System.Windows.Forms.CheckBox chkSoloLectura;
+		private System.Windows.Forms.CheckBox chkComprimido;
+		private System.Windows.Forms.CheckBox chkSistema;
+		private System.Windows.Forms.CheckBox chkArchivado;
+		private System.Windows.Forms.CheckBox chkOculto;
+		private System.Windows.Forms.CheckBox chkEncriptado;
+		private System.Windows.Forms.ColumnHeader columnHeader10;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -74,8 +89,9 @@ namespace CatalogadorArchivos
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.listView1 = new System.Windows.Forms.ListView();
+			this.lvEncontrados = new System.Windows.Forms.ListView();
 			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
@@ -86,19 +102,13 @@ namespace CatalogadorArchivos
 			this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader21 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.label19 = new System.Windows.Forms.Label();
 			this.label18 = new System.Windows.Forms.Label();
 			this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+			this.btnBuscar = new System.Windows.Forms.Button();
+			this.btnCancelar = new System.Windows.Forms.Button();
 			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -107,19 +117,44 @@ namespace CatalogadorArchivos
 			this.checkBox6 = new System.Windows.Forms.CheckBox();
 			this.checkBox7 = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtBuscarPor = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.comboBox5 = new System.Windows.Forms.ComboBox();
+			this.chkSoloLectura = new System.Windows.Forms.CheckBox();
+			this.chkComprimido = new System.Windows.Forms.CheckBox();
+			this.chkSistema = new System.Windows.Forms.CheckBox();
+			this.chkArchivado = new System.Windows.Forms.CheckBox();
+			this.chkOculto = new System.Windows.Forms.CheckBox();
+			this.chkEncriptado = new System.Windows.Forms.CheckBox();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.comboBox4 = new System.Windows.Forms.ComboBox();
+			this.comboBox3 = new System.Windows.Forms.ComboBox();
+			this.domainUpDown2 = new System.Windows.Forms.DomainUpDown();
+			this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.checkBox9 = new System.Windows.Forms.CheckBox();
+			this.checkBox8 = new System.Windows.Forms.CheckBox();
+			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			this.tabPage2.SuspendLayout();
+			this.groupBox3.SuspendLayout();
+			this.groupBox2.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// listView1
+			// lvEncontrados
 			// 
-			this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+			this.lvEncontrados.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
 			this.columnHeader1,
+			this.columnHeader10,
 			this.columnHeader2,
 			this.columnHeader3,
 			this.columnHeader4,
@@ -129,26 +164,25 @@ namespace CatalogadorArchivos
 			this.columnHeader8,
 			this.columnHeader9,
 			this.columnHeader15,
-			this.columnHeader16,
-			this.columnHeader17,
-			this.columnHeader18,
-			this.columnHeader19,
-			this.columnHeader20,
-			this.columnHeader21,
-			this.columnHeader22});
-			this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.listView1.FullRowSelect = true;
-			this.listView1.GridLines = true;
-			this.listView1.Location = new System.Drawing.Point(0, 216);
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(762, 235);
-			this.listView1.TabIndex = 1;
-			this.listView1.UseCompatibleStateImageBehavior = false;
-			this.listView1.View = System.Windows.Forms.View.Details;
+			this.columnHeader16});
+			this.lvEncontrados.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.lvEncontrados.FullRowSelect = true;
+			this.lvEncontrados.GridLines = true;
+			this.lvEncontrados.Location = new System.Drawing.Point(0, 216);
+			this.lvEncontrados.Name = "lvEncontrados";
+			this.lvEncontrados.Size = new System.Drawing.Size(762, 235);
+			this.lvEncontrados.TabIndex = 1;
+			this.lvEncontrados.UseCompatibleStateImageBehavior = false;
+			this.lvEncontrados.View = System.Windows.Forms.View.Details;
 			// 
 			// columnHeader1
 			// 
 			this.columnHeader1.Text = "ID Disco";
+			// 
+			// columnHeader10
+			// 
+			this.columnHeader10.Text = "Nombre de Disco";
+			this.columnHeader10.Width = 150;
 			// 
 			// columnHeader2
 			// 
@@ -157,68 +191,45 @@ namespace CatalogadorArchivos
 			// 
 			// columnHeader3
 			// 
-			this.columnHeader3.Text = "Archivos";
+			this.columnHeader3.Text = "Tipo";
 			// 
 			// columnHeader4
 			// 
-			this.columnHeader4.Text = "Carpetas";
+			this.columnHeader4.Text = "Tamaño";
 			// 
 			// columnHeader5
 			// 
-			this.columnHeader5.Text = "Tamaño";
+			this.columnHeader5.Text = "Modificado";
 			this.columnHeader5.Width = 120;
 			// 
 			// columnHeader6
 			// 
-			this.columnHeader6.Text = "Capacidad";
+			this.columnHeader6.Text = "Ruta";
 			this.columnHeader6.Width = 120;
 			// 
 			// columnHeader7
 			// 
-			this.columnHeader7.Text = "Espacio libre";
+			this.columnHeader7.Text = "Categoría";
 			this.columnHeader7.Width = 120;
 			// 
 			// columnHeader8
 			// 
-			this.columnHeader8.Text = "Sistema de archivos";
+			this.columnHeader8.Text = "Locación";
 			this.columnHeader8.Width = 120;
 			// 
 			// columnHeader9
 			// 
-			this.columnHeader9.Text = "Numero de serie";
+			this.columnHeader9.Text = "Préstamo";
 			this.columnHeader9.Width = 120;
 			// 
 			// columnHeader15
 			// 
-			this.columnHeader15.Text = "Tipo";
+			this.columnHeader15.Text = "Comentario";
 			// 
 			// columnHeader16
 			// 
-			this.columnHeader16.Text = "Etiqueta";
-			// 
-			// columnHeader17
-			// 
-			this.columnHeader17.Text = "Categoría";
-			// 
-			// columnHeader18
-			// 
-			this.columnHeader18.Text = "Locación";
-			// 
-			// columnHeader19
-			// 
-			this.columnHeader19.Text = "Préstamo";
-			// 
-			// columnHeader20
-			// 
-			this.columnHeader20.Text = "Fecha de escaneo";
-			// 
-			// columnHeader21
-			// 
-			this.columnHeader21.Text = "Letra de Dispositivo";
-			// 
-			// columnHeader22
-			// 
-			this.columnHeader22.Text = "Comentario";
+			this.columnHeader16.Text = "Comentario de disco";
+			this.columnHeader16.Width = 150;
 			// 
 			// comboBox2
 			// 
@@ -269,23 +280,25 @@ namespace CatalogadorArchivos
 			this.checkedListBox1.Size = new System.Drawing.Size(160, 94);
 			this.checkedListBox1.TabIndex = 12;
 			// 
-			// button1
+			// btnBuscar
 			// 
-			this.button1.Location = new System.Drawing.Point(36, 154);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 13;
-			this.button1.Text = "Buscar";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnBuscar.Location = new System.Drawing.Point(36, 154);
+			this.btnBuscar.Name = "btnBuscar";
+			this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+			this.btnBuscar.TabIndex = 13;
+			this.btnBuscar.Text = "Buscar";
+			this.btnBuscar.UseVisualStyleBackColor = true;
+			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
 			// 
-			// button2
+			// btnCancelar
 			// 
-			this.button2.Location = new System.Drawing.Point(124, 154);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 14;
-			this.button2.Text = "Cancelar";
-			this.button2.UseVisualStyleBackColor = true;
+			this.btnCancelar.Location = new System.Drawing.Point(124, 154);
+			this.btnCancelar.Name = "btnCancelar";
+			this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+			this.btnCancelar.TabIndex = 14;
+			this.btnCancelar.Text = "Cancelar";
+			this.btnCancelar.UseVisualStyleBackColor = true;
+			this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
 			// 
 			// checkBox1
 			// 
@@ -343,7 +356,7 @@ namespace CatalogadorArchivos
 			// 
 			// checkBox7
 			// 
-			this.checkBox7.Location = new System.Drawing.Point(188, 80);
+			this.checkBox7.Location = new System.Drawing.Point(192, 80);
 			this.checkBox7.Name = "checkBox7";
 			this.checkBox7.Size = new System.Drawing.Size(140, 24);
 			this.checkBox7.TabIndex = 16;
@@ -358,12 +371,12 @@ namespace CatalogadorArchivos
 			this.label1.TabIndex = 11;
 			this.label1.Text = "Tipo de Disco:";
 			// 
-			// textBox1
+			// txtBuscarPor
 			// 
-			this.textBox1.Location = new System.Drawing.Point(100, 24);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(164, 20);
-			this.textBox1.TabIndex = 17;
+			this.txtBuscarPor.Location = new System.Drawing.Point(100, 24);
+			this.txtBuscarPor.Name = "txtBuscarPor";
+			this.txtBuscarPor.Size = new System.Drawing.Size(164, 20);
+			this.txtBuscarPor.TabIndex = 17;
 			// 
 			// label2
 			// 
@@ -377,15 +390,16 @@ namespace CatalogadorArchivos
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(760, 216);
+			this.tabControl1.Size = new System.Drawing.Size(762, 216);
 			this.tabControl1.TabIndex = 19;
 			// 
 			// tabPage1
 			// 
-			this.tabPage1.Controls.Add(this.textBox1);
+			this.tabPage1.Controls.Add(this.txtBuscarPor);
 			this.tabPage1.Controls.Add(this.label2);
 			this.tabPage1.Controls.Add(this.label18);
 			this.tabPage1.Controls.Add(this.label1);
@@ -394,31 +408,247 @@ namespace CatalogadorArchivos
 			this.tabPage1.Controls.Add(this.comboBox1);
 			this.tabPage1.Controls.Add(this.checkBox5);
 			this.tabPage1.Controls.Add(this.comboBox2);
-			this.tabPage1.Controls.Add(this.checkBox4);
 			this.tabPage1.Controls.Add(this.checkedListBox1);
-			this.tabPage1.Controls.Add(this.checkBox3);
-			this.tabPage1.Controls.Add(this.button1);
+			this.tabPage1.Controls.Add(this.btnBuscar);
 			this.tabPage1.Controls.Add(this.checkBox2);
-			this.tabPage1.Controls.Add(this.button2);
+			this.tabPage1.Controls.Add(this.btnCancelar);
 			this.tabPage1.Controls.Add(this.checkBox1);
 			this.tabPage1.Controls.Add(this.checkBox7);
+			this.tabPage1.Controls.Add(this.checkBox4);
+			this.tabPage1.Controls.Add(this.checkBox3);
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(752, 190);
+			this.tabPage1.Size = new System.Drawing.Size(754, 190);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "General";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.groupBox3);
+			this.tabPage2.Controls.Add(this.groupBox2);
+			this.tabPage2.Controls.Add(this.groupBox1);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(752, 190);
+			this.tabPage2.Size = new System.Drawing.Size(754, 190);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Avanzado";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// groupBox3
+			// 
+			this.groupBox3.Controls.Add(this.comboBox5);
+			this.groupBox3.Controls.Add(this.chkSoloLectura);
+			this.groupBox3.Controls.Add(this.chkComprimido);
+			this.groupBox3.Controls.Add(this.chkSistema);
+			this.groupBox3.Controls.Add(this.chkArchivado);
+			this.groupBox3.Controls.Add(this.chkOculto);
+			this.groupBox3.Controls.Add(this.chkEncriptado);
+			this.groupBox3.Location = new System.Drawing.Point(496, 32);
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.Size = new System.Drawing.Size(232, 128);
+			this.groupBox3.TabIndex = 1;
+			this.groupBox3.TabStop = false;
+			this.groupBox3.Text = "Atributos";
+			// 
+			// comboBox5
+			// 
+			this.comboBox5.FormattingEnabled = true;
+			this.comboBox5.Items.AddRange(new object[] {
+			"Todo de lo seleccionado"});
+			this.comboBox5.Location = new System.Drawing.Point(16, 24);
+			this.comboBox5.Name = "comboBox5";
+			this.comboBox5.Size = new System.Drawing.Size(200, 21);
+			this.comboBox5.TabIndex = 17;
+			this.comboBox5.Text = "Alguno de lo seleccionado";
+			// 
+			// chkSoloLectura
+			// 
+			this.chkSoloLectura.Enabled = false;
+			this.chkSoloLectura.Location = new System.Drawing.Point(16, 48);
+			this.chkSoloLectura.Name = "chkSoloLectura";
+			this.chkSoloLectura.Size = new System.Drawing.Size(96, 24);
+			this.chkSoloLectura.TabIndex = 11;
+			this.chkSoloLectura.Text = "Solo lectura";
+			this.chkSoloLectura.UseVisualStyleBackColor = true;
+			// 
+			// chkComprimido
+			// 
+			this.chkComprimido.Enabled = false;
+			this.chkComprimido.Location = new System.Drawing.Point(128, 72);
+			this.chkComprimido.Name = "chkComprimido";
+			this.chkComprimido.Size = new System.Drawing.Size(96, 24);
+			this.chkComprimido.TabIndex = 12;
+			this.chkComprimido.Text = "Comprimido";
+			this.chkComprimido.UseVisualStyleBackColor = true;
+			// 
+			// chkSistema
+			// 
+			this.chkSistema.Enabled = false;
+			this.chkSistema.Location = new System.Drawing.Point(128, 48);
+			this.chkSistema.Name = "chkSistema";
+			this.chkSistema.Size = new System.Drawing.Size(80, 24);
+			this.chkSistema.TabIndex = 13;
+			this.chkSistema.Text = "Sistema";
+			this.chkSistema.UseVisualStyleBackColor = true;
+			// 
+			// chkArchivado
+			// 
+			this.chkArchivado.Enabled = false;
+			this.chkArchivado.Location = new System.Drawing.Point(16, 96);
+			this.chkArchivado.Name = "chkArchivado";
+			this.chkArchivado.Size = new System.Drawing.Size(88, 24);
+			this.chkArchivado.TabIndex = 14;
+			this.chkArchivado.Text = "Archivado";
+			this.chkArchivado.UseVisualStyleBackColor = true;
+			// 
+			// chkOculto
+			// 
+			this.chkOculto.Enabled = false;
+			this.chkOculto.Location = new System.Drawing.Point(16, 72);
+			this.chkOculto.Name = "chkOculto";
+			this.chkOculto.Size = new System.Drawing.Size(80, 24);
+			this.chkOculto.TabIndex = 15;
+			this.chkOculto.Text = "Oculto";
+			this.chkOculto.UseVisualStyleBackColor = true;
+			// 
+			// chkEncriptado
+			// 
+			this.chkEncriptado.Enabled = false;
+			this.chkEncriptado.Location = new System.Drawing.Point(128, 96);
+			this.chkEncriptado.Name = "chkEncriptado";
+			this.chkEncriptado.Size = new System.Drawing.Size(88, 24);
+			this.chkEncriptado.TabIndex = 16;
+			this.chkEncriptado.Text = "Encriptado";
+			this.chkEncriptado.UseVisualStyleBackColor = true;
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.comboBox4);
+			this.groupBox2.Controls.Add(this.comboBox3);
+			this.groupBox2.Controls.Add(this.domainUpDown2);
+			this.groupBox2.Controls.Add(this.domainUpDown1);
+			this.groupBox2.Controls.Add(this.label4);
+			this.groupBox2.Controls.Add(this.label3);
+			this.groupBox2.Location = new System.Drawing.Point(256, 32);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(232, 100);
+			this.groupBox2.TabIndex = 1;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Tamaño";
+			// 
+			// comboBox4
+			// 
+			this.comboBox4.FormattingEnabled = true;
+			this.comboBox4.Items.AddRange(new object[] {
+			"Bytes",
+			"KB",
+			"MB",
+			"GB"});
+			this.comboBox4.Location = new System.Drawing.Point(168, 56);
+			this.comboBox4.Name = "comboBox4";
+			this.comboBox4.Size = new System.Drawing.Size(56, 21);
+			this.comboBox4.TabIndex = 2;
+			this.comboBox4.Text = "Bytes";
+			// 
+			// comboBox3
+			// 
+			this.comboBox3.FormattingEnabled = true;
+			this.comboBox3.Items.AddRange(new object[] {
+			"Bytes",
+			"KB",
+			"MB",
+			"GB"});
+			this.comboBox3.Location = new System.Drawing.Point(168, 24);
+			this.comboBox3.Name = "comboBox3";
+			this.comboBox3.Size = new System.Drawing.Size(56, 21);
+			this.comboBox3.TabIndex = 2;
+			this.comboBox3.Text = "Bytes";
+			// 
+			// domainUpDown2
+			// 
+			this.domainUpDown2.Location = new System.Drawing.Point(40, 56);
+			this.domainUpDown2.Name = "domainUpDown2";
+			this.domainUpDown2.Size = new System.Drawing.Size(120, 20);
+			this.domainUpDown2.TabIndex = 1;
+			this.domainUpDown2.Text = "0";
+			// 
+			// domainUpDown1
+			// 
+			this.domainUpDown1.Location = new System.Drawing.Point(40, 24);
+			this.domainUpDown1.Name = "domainUpDown1";
+			this.domainUpDown1.Size = new System.Drawing.Size(120, 20);
+			this.domainUpDown1.TabIndex = 1;
+			this.domainUpDown1.Text = "0";
+			// 
+			// label4
+			// 
+			this.label4.Location = new System.Drawing.Point(8, 56);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(64, 23);
+			this.label4.TabIndex = 0;
+			this.label4.Text = "Max";
+			// 
+			// label3
+			// 
+			this.label3.Location = new System.Drawing.Point(8, 24);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(64, 23);
+			this.label3.TabIndex = 0;
+			this.label3.Text = "Mín";
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.checkBox9);
+			this.groupBox1.Controls.Add(this.checkBox8);
+			this.groupBox1.Controls.Add(this.dateTimePicker2);
+			this.groupBox1.Controls.Add(this.dateTimePicker1);
+			this.groupBox1.Location = new System.Drawing.Point(8, 32);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(240, 100);
+			this.groupBox1.TabIndex = 0;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Modificado";
+			// 
+			// checkBox9
+			// 
+			this.checkBox9.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.checkBox9.Location = new System.Drawing.Point(8, 56);
+			this.checkBox9.Name = "checkBox9";
+			this.checkBox9.Size = new System.Drawing.Size(64, 24);
+			this.checkBox9.TabIndex = 2;
+			this.checkBox9.Text = "Hasta";
+			this.checkBox9.UseVisualStyleBackColor = true;
+			// 
+			// checkBox8
+			// 
+			this.checkBox8.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.checkBox8.Location = new System.Drawing.Point(8, 24);
+			this.checkBox8.Name = "checkBox8";
+			this.checkBox8.Size = new System.Drawing.Size(64, 24);
+			this.checkBox8.TabIndex = 2;
+			this.checkBox8.Text = "Desde";
+			this.checkBox8.UseVisualStyleBackColor = true;
+			// 
+			// dateTimePicker2
+			// 
+			this.dateTimePicker2.Enabled = false;
+			this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dateTimePicker2.Location = new System.Drawing.Point(80, 56);
+			this.dateTimePicker2.Name = "dateTimePicker2";
+			this.dateTimePicker2.Size = new System.Drawing.Size(144, 20);
+			this.dateTimePicker2.TabIndex = 1;
+			// 
+			// dateTimePicker1
+			// 
+			this.dateTimePicker1.Enabled = false;
+			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dateTimePicker1.Location = new System.Drawing.Point(80, 24);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(144, 20);
+			this.dateTimePicker1.TabIndex = 0;
 			// 
 			// frmBuscar
 			// 
@@ -426,12 +656,16 @@ namespace CatalogadorArchivos
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(762, 451);
 			this.Controls.Add(this.tabControl1);
-			this.Controls.Add(this.listView1);
+			this.Controls.Add(this.lvEncontrados);
 			this.Name = "frmBuscar";
 			this.Text = "Buscar";
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
+			this.tabPage2.ResumeLayout(false);
+			this.groupBox3.ResumeLayout(false);
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}

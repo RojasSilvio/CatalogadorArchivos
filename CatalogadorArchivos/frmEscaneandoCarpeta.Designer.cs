@@ -129,7 +129,7 @@ namespace CatalogadorArchivos
 			// 
 			this.label4.Location = new System.Drawing.Point(16, 48);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(100, 23);
+			this.label4.Size = new System.Drawing.Size(120, 23);
 			this.label4.TabIndex = 0;
 			this.label4.Text = "Sistema de archivos:";
 			// 
@@ -153,7 +153,7 @@ namespace CatalogadorArchivos
 			// 
 			this.label2.Location = new System.Drawing.Point(16, 96);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(100, 23);
+			this.label2.Size = new System.Drawing.Size(112, 23);
 			this.label2.TabIndex = 0;
 			this.label2.Text = "Numero de serie:";
 			// 
@@ -169,7 +169,7 @@ namespace CatalogadorArchivos
 			// 
 			this.label1.Location = new System.Drawing.Point(16, 72);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 23);
+			this.label1.Size = new System.Drawing.Size(112, 23);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Tipo:";
 			// 

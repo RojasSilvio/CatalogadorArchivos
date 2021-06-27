@@ -23,6 +23,8 @@ namespace CatalogadorArchivos
 	/// </summary>
 	public partial class MainForm : Form
 	{
+		int escaneoSeleccionado;
+		
 		public MainForm()
 		{
 			//
@@ -106,25 +108,14 @@ namespace CatalogadorArchivos
 			}
 			treeView1.Nodes.Clear();
 			treeView1.Nodes.Add(PopulateTreeNode2(directorios, "\\"));
-//			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM ESCANEOS", conexion);
-// 
-//			DataSet d = new DataSet();
-//			adapter.Fill(d);
-// 
-//			foreach (DataRow row in d.Tables[0].Rows) {
-//				Console.WriteLine("ID: " + row["Id"]);
-//				Console.WriteLine("Nombre: " + row["nombre"]);
-//				Console.WriteLine("Apellidos: " + row["apellidos"]);
-//				Console.WriteLine("Edad: " + row["edad"]);
-//				Console.WriteLine("");
-//			}
-// 
+			
 			conexion.Close();
 			
 			RefrescaEscaneos();
 			
  
 		}
+		
 		private TreeNode crearArbol(DirectoryInfo directoryInfo)
 		{
 			TreeNode treeNode = new TreeNode(directoryInfo.Name);
@@ -262,25 +253,51 @@ namespace CatalogadorArchivos
 			treeView1.ExpandAll();
 			treeView2.ExpandAll();
 			toolStrip1.ImageScalingSize = new Size(30, 30);
+			if (File.Exists("Grupo6.accdb")){
+				RefrescaEscaneos();
+//				PopulateTreeNode2(
+			}
+			
 		}
+		
 		void listView1_ItemActivate(object sender, EventArgs e)
 		{
-//			path
-//			treeView1.Nodes.Add()
+			
 		}
+		
 		void tsmiIconos_Click(object sender, EventArgs e)
 		{
 			listView2.View = View.Tile;
 		}
+		
 		void tsmiDetalles_Click(object sender, EventArgs e)
 		{
 			listView2.View = View.Details;
 		}
+		
 		void tssbBuscar_Click(object sender, EventArgs e)
 		{
 			frmBuscar oFrmBuscar = new frmBuscar();
 			
 			oFrmBuscar.ShowDialog();
+		}
+		void tssbPropiedades_Click(object sender, EventArgs e)
+		{
+			frmPropiedadesEscaneos ofrmPropiedadesEscaneos = new frmPropiedadesEscaneos();
+			
+			ofrmPropiedadesEscaneos.ShowDialog(escaneoSeleccionado);
+		}
+		
+		void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+		{
+			if (e.IsSelected){
+				escaneoSeleccionado = Convert.ToInt32(e.Item.SubItems[0].Text);
+				tssbPropiedades.Enabled = true;
+				tssbEliminar.Enabled = true;
+			}else {
+				tssbPropiedades.Enabled = false;
+				tssbEliminar.Enabled = false;
+			}
 		}
 		
 		

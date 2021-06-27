@@ -68,6 +68,10 @@
     <Compile Include="frmPropiedadesArchivos.Designer.cs">
       <DependentUpon>frmPropiedadesArchivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPropiedadesEscaneos.cs" />
+    <Compile Include="frmPropiedadesEscaneos.Designer.cs">
+      <DependentUpon>frmPropiedadesEscaneos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPropiedadesArchivos.resx">
       <DependentUpon>frmPropiedadesArchivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPropiedadesEscaneos.resx">
+      <DependentUpon>frmPropiedadesEscaneos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
