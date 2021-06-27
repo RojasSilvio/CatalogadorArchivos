@@ -303,6 +303,13 @@ namespace CatalogadorArchivos
 		{
 			this.Close();
 		}
+		void tssbEliminar_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Estás seguro que quieres eliminar este disco?","Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes){
+				CatalogadorArchivos.eliminar(escaneoSeleccionado);
+				RefrescaEscaneos();
+			}
+		}
 		
 		
 	}

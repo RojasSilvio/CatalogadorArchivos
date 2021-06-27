@@ -347,6 +347,7 @@ namespace CatalogadorArchivos
 			this.tssbEliminar.Name = "tssbEliminar";
 			this.tssbEliminar.Size = new System.Drawing.Size(44, 44);
 			this.tssbEliminar.Text = "Eliminar";
+			this.tssbEliminar.Click += new System.EventHandler(this.tssbEliminar_Click);
 			// 
 			// toolStripSeparator1
 			// 
