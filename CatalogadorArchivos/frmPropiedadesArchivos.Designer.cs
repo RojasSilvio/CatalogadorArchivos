@@ -77,25 +77,25 @@ namespace CatalogadorArchivos
 			this.lblAtributos = new System.Windows.Forms.Label();
 			this.lblComentario = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.lblAccedidoValor = new System.Windows.Forms.Label();
+			this.lblModificadoValor = new System.Windows.Forms.Label();
+			this.lblCreadoValor = new System.Windows.Forms.Label();
+			this.lblAccedido = new System.Windows.Forms.Label();
+			this.lblModificado = new System.Windows.Forms.Label();
+			this.lblCreado = new System.Windows.Forms.Label();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.lblRuta = new System.Windows.Forms.Label();
+			this.lblTipo = new System.Windows.Forms.Label();
+			this.lblTamanoValor = new System.Windows.Forms.Label();
+			this.lblRutaValor = new System.Windows.Forms.Label();
+			this.lblTipoValor = new System.Windows.Forms.Label();
+			this.lblNombreValor = new System.Windows.Forms.Label();
+			this.lblTamano = new System.Windows.Forms.Label();
+			this.lblNombre = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
-			this.lblNombreValor = new System.Windows.Forms.Label();
-			this.lblNombre = new System.Windows.Forms.Label();
-			this.lblTipo = new System.Windows.Forms.Label();
 			this.txtUbicacion = new System.Windows.Forms.TextBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.lblCreado = new System.Windows.Forms.Label();
-			this.lblModificado = new System.Windows.Forms.Label();
-			this.lblAccedido = new System.Windows.Forms.Label();
-			this.lblCreadoValor = new System.Windows.Forms.Label();
-			this.lblModificadoValor = new System.Windows.Forms.Label();
-			this.lblAccedidoValor = new System.Windows.Forms.Label();
-			this.lblTamano = new System.Windows.Forms.Label();
-			this.lblRuta = new System.Windows.Forms.Label();
-			this.lblTamanoValor = new System.Windows.Forms.Label();
-			this.lblTipoValor = new System.Windows.Forms.Label();
-			this.lblRutaValor = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -220,6 +220,54 @@ namespace CatalogadorArchivos
 			this.groupBox2.TabIndex = 0;
 			this.groupBox2.TabStop = false;
 			// 
+			// lblAccedidoValor
+			// 
+			this.lblAccedidoValor.Location = new System.Drawing.Point(120, 80);
+			this.lblAccedidoValor.Name = "lblAccedidoValor";
+			this.lblAccedidoValor.Size = new System.Drawing.Size(224, 23);
+			this.lblAccedidoValor.TabIndex = 5;
+			this.lblAccedidoValor.Text = "label8";
+			// 
+			// lblModificadoValor
+			// 
+			this.lblModificadoValor.Location = new System.Drawing.Point(120, 48);
+			this.lblModificadoValor.Name = "lblModificadoValor";
+			this.lblModificadoValor.Size = new System.Drawing.Size(224, 23);
+			this.lblModificadoValor.TabIndex = 4;
+			this.lblModificadoValor.Text = "label7";
+			// 
+			// lblCreadoValor
+			// 
+			this.lblCreadoValor.Location = new System.Drawing.Point(120, 16);
+			this.lblCreadoValor.Name = "lblCreadoValor";
+			this.lblCreadoValor.Size = new System.Drawing.Size(224, 23);
+			this.lblCreadoValor.TabIndex = 3;
+			this.lblCreadoValor.Text = "label6";
+			// 
+			// lblAccedido
+			// 
+			this.lblAccedido.Location = new System.Drawing.Point(16, 80);
+			this.lblAccedido.Name = "lblAccedido";
+			this.lblAccedido.Size = new System.Drawing.Size(100, 23);
+			this.lblAccedido.TabIndex = 2;
+			this.lblAccedido.Text = "Accedido:";
+			// 
+			// lblModificado
+			// 
+			this.lblModificado.Location = new System.Drawing.Point(16, 48);
+			this.lblModificado.Name = "lblModificado";
+			this.lblModificado.Size = new System.Drawing.Size(100, 23);
+			this.lblModificado.TabIndex = 1;
+			this.lblModificado.Text = "Modificado:";
+			// 
+			// lblCreado
+			// 
+			this.lblCreado.Location = new System.Drawing.Point(16, 16);
+			this.lblCreado.Name = "lblCreado";
+			this.lblCreado.Size = new System.Drawing.Size(100, 23);
+			this.lblCreado.TabIndex = 0;
+			this.lblCreado.Text = "Creado:";
+			// 
 			// groupBox3
 			// 
 			this.groupBox3.Controls.Add(this.lblRuta);
@@ -235,6 +283,72 @@ namespace CatalogadorArchivos
 			this.groupBox3.Size = new System.Drawing.Size(360, 144);
 			this.groupBox3.TabIndex = 0;
 			this.groupBox3.TabStop = false;
+			// 
+			// lblRuta
+			// 
+			this.lblRuta.Location = new System.Drawing.Point(12, 80);
+			this.lblRuta.Name = "lblRuta";
+			this.lblRuta.Size = new System.Drawing.Size(100, 23);
+			this.lblRuta.TabIndex = 1;
+			this.lblRuta.Text = "Ruta:";
+			// 
+			// lblTipo
+			// 
+			this.lblTipo.Location = new System.Drawing.Point(12, 48);
+			this.lblTipo.Name = "lblTipo";
+			this.lblTipo.Size = new System.Drawing.Size(100, 23);
+			this.lblTipo.TabIndex = 1;
+			this.lblTipo.Text = "Tipo:";
+			// 
+			// lblTamanoValor
+			// 
+			this.lblTamanoValor.Location = new System.Drawing.Point(120, 112);
+			this.lblTamanoValor.Name = "lblTamanoValor";
+			this.lblTamanoValor.Size = new System.Drawing.Size(216, 23);
+			this.lblTamanoValor.TabIndex = 2;
+			this.lblTamanoValor.Text = "label1";
+			// 
+			// lblRutaValor
+			// 
+			this.lblRutaValor.AccessibleName = "lblTamanoValor";
+			this.lblRutaValor.Location = new System.Drawing.Point(120, 80);
+			this.lblRutaValor.Name = "lblRutaValor";
+			this.lblRutaValor.Size = new System.Drawing.Size(216, 23);
+			this.lblRutaValor.TabIndex = 1;
+			this.lblRutaValor.Text = "label1";
+			// 
+			// lblTipoValor
+			// 
+			this.lblTipoValor.Location = new System.Drawing.Point(120, 48);
+			this.lblTipoValor.Name = "lblTipoValor";
+			this.lblTipoValor.Size = new System.Drawing.Size(216, 23);
+			this.lblTipoValor.TabIndex = 2;
+			this.lblTipoValor.Text = "label1";
+			// 
+			// lblNombreValor
+			// 
+			this.lblNombreValor.AccessibleName = "lblTamanoValor";
+			this.lblNombreValor.Location = new System.Drawing.Point(120, 16);
+			this.lblNombreValor.Name = "lblNombreValor";
+			this.lblNombreValor.Size = new System.Drawing.Size(216, 23);
+			this.lblNombreValor.TabIndex = 1;
+			this.lblNombreValor.Text = "label1";
+			// 
+			// lblTamano
+			// 
+			this.lblTamano.Location = new System.Drawing.Point(12, 112);
+			this.lblTamano.Name = "lblTamano";
+			this.lblTamano.Size = new System.Drawing.Size(100, 23);
+			this.lblTamano.TabIndex = 2;
+			this.lblTamano.Text = "Tamaño:";
+			// 
+			// lblNombre
+			// 
+			this.lblNombre.Location = new System.Drawing.Point(12, 16);
+			this.lblNombre.Name = "lblNombre";
+			this.lblNombre.Size = new System.Drawing.Size(100, 23);
+			this.lblNombre.TabIndex = 2;
+			this.lblNombre.Text = "Nombre:";
 			// 
 			// button1
 			// 
@@ -254,31 +368,6 @@ namespace CatalogadorArchivos
 			this.button2.Text = "Cancelar";
 			this.button2.UseVisualStyleBackColor = true;
 			// 
-			// lblNombreValor
-			// 
-			this.lblNombreValor.AccessibleName = "lblTamanoValor";
-			this.lblNombreValor.Location = new System.Drawing.Point(128, 16);
-			this.lblNombreValor.Name = "lblNombreValor";
-			this.lblNombreValor.Size = new System.Drawing.Size(192, 23);
-			this.lblNombreValor.TabIndex = 1;
-			this.lblNombreValor.Text = "label1";
-			// 
-			// lblNombre
-			// 
-			this.lblNombre.Location = new System.Drawing.Point(12, 16);
-			this.lblNombre.Name = "lblNombre";
-			this.lblNombre.Size = new System.Drawing.Size(100, 23);
-			this.lblNombre.TabIndex = 2;
-			this.lblNombre.Text = "Nombre:";
-			// 
-			// lblTipo
-			// 
-			this.lblTipo.Location = new System.Drawing.Point(12, 48);
-			this.lblTipo.Name = "lblTipo";
-			this.lblTipo.Size = new System.Drawing.Size(100, 23);
-			this.lblTipo.TabIndex = 1;
-			this.lblTipo.Text = "Tipo:";
-			// 
 			// txtUbicacion
 			// 
 			this.txtUbicacion.AccessibleName = "txtUbicacion";
@@ -294,95 +383,6 @@ namespace CatalogadorArchivos
 			this.pictureBox1.Size = new System.Drawing.Size(40, 48);
 			this.pictureBox1.TabIndex = 6;
 			this.pictureBox1.TabStop = false;
-			// 
-			// lblCreado
-			// 
-			this.lblCreado.Location = new System.Drawing.Point(16, 16);
-			this.lblCreado.Name = "lblCreado";
-			this.lblCreado.Size = new System.Drawing.Size(100, 23);
-			this.lblCreado.TabIndex = 0;
-			this.lblCreado.Text = "Creado:";
-			// 
-			// lblModificado
-			// 
-			this.lblModificado.Location = new System.Drawing.Point(16, 48);
-			this.lblModificado.Name = "lblModificado";
-			this.lblModificado.Size = new System.Drawing.Size(100, 23);
-			this.lblModificado.TabIndex = 1;
-			this.lblModificado.Text = "Modificado:";
-			// 
-			// lblAccedido
-			// 
-			this.lblAccedido.Location = new System.Drawing.Point(16, 80);
-			this.lblAccedido.Name = "lblAccedido";
-			this.lblAccedido.Size = new System.Drawing.Size(100, 23);
-			this.lblAccedido.TabIndex = 2;
-			this.lblAccedido.Text = "Accedido:";
-			// 
-			// lblCreadoValor
-			// 
-			this.lblCreadoValor.Location = new System.Drawing.Point(120, 16);
-			this.lblCreadoValor.Name = "lblCreadoValor";
-			this.lblCreadoValor.Size = new System.Drawing.Size(100, 23);
-			this.lblCreadoValor.TabIndex = 3;
-			this.lblCreadoValor.Text = "label6";
-			// 
-			// lblModificadoValor
-			// 
-			this.lblModificadoValor.Location = new System.Drawing.Point(120, 48);
-			this.lblModificadoValor.Name = "lblModificadoValor";
-			this.lblModificadoValor.Size = new System.Drawing.Size(100, 23);
-			this.lblModificadoValor.TabIndex = 4;
-			this.lblModificadoValor.Text = "label7";
-			// 
-			// lblAccedidoValor
-			// 
-			this.lblAccedidoValor.Location = new System.Drawing.Point(120, 80);
-			this.lblAccedidoValor.Name = "lblAccedidoValor";
-			this.lblAccedidoValor.Size = new System.Drawing.Size(100, 23);
-			this.lblAccedidoValor.TabIndex = 5;
-			this.lblAccedidoValor.Text = "label8";
-			// 
-			// lblTamano
-			// 
-			this.lblTamano.Location = new System.Drawing.Point(12, 112);
-			this.lblTamano.Name = "lblTamano";
-			this.lblTamano.Size = new System.Drawing.Size(100, 23);
-			this.lblTamano.TabIndex = 2;
-			this.lblTamano.Text = "Tamaño:";
-			// 
-			// lblRuta
-			// 
-			this.lblRuta.Location = new System.Drawing.Point(12, 80);
-			this.lblRuta.Name = "lblRuta";
-			this.lblRuta.Size = new System.Drawing.Size(100, 23);
-			this.lblRuta.TabIndex = 1;
-			this.lblRuta.Text = "Ruta:";
-			// 
-			// lblTamanoValor
-			// 
-			this.lblTamanoValor.Location = new System.Drawing.Point(128, 112);
-			this.lblTamanoValor.Name = "lblTamanoValor";
-			this.lblTamanoValor.Size = new System.Drawing.Size(216, 23);
-			this.lblTamanoValor.TabIndex = 2;
-			this.lblTamanoValor.Text = "label1";
-			// 
-			// lblTipoValor
-			// 
-			this.lblTipoValor.Location = new System.Drawing.Point(128, 48);
-			this.lblTipoValor.Name = "lblTipoValor";
-			this.lblTipoValor.Size = new System.Drawing.Size(216, 23);
-			this.lblTipoValor.TabIndex = 2;
-			this.lblTipoValor.Text = "label1";
-			// 
-			// lblRutaValor
-			// 
-			this.lblRutaValor.AccessibleName = "lblTamanoValor";
-			this.lblRutaValor.Location = new System.Drawing.Point(128, 80);
-			this.lblRutaValor.Name = "lblRutaValor";
-			this.lblRutaValor.Size = new System.Drawing.Size(216, 23);
-			this.lblRutaValor.TabIndex = 1;
-			this.lblRutaValor.Text = "label1";
 			// 
 			// frmPropiedadesArchivos
 			// 

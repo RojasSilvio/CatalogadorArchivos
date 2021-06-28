@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Timers;
 using System.Windows.Forms;
 using System.Management;
 using System.Diagnostics;
@@ -24,7 +25,7 @@ namespace CatalogadorArchivos
 	public partial class MainForm : Form
 	{
 		int escaneoSeleccionado;
-		
+		public DirectoryInfo rutaPrincipal;
 		public MainForm()
 		{
 			//
@@ -42,95 +43,128 @@ namespace CatalogadorArchivos
 			
 			var oSeleccionarCarpeta = new FolderBrowserDialog();
 			
-			oSeleccionarCarpeta.ShowDialog();
-			int files = Directory.GetFiles(oSeleccionarCarpeta.SelectedPath, "*.*", SearchOption.AllDirectories).Length;
-			String[] rutas = Directory.GetFiles(oSeleccionarCarpeta.SelectedPath, "*", SearchOption.AllDirectories);
-			String[] directorios = Directory.GetDirectories(oSeleccionarCarpeta.SelectedPath, "*", SearchOption.AllDirectories);
-			int dirs = Directory.GetDirectories(oSeleccionarCarpeta.SelectedPath, "*", SearchOption.AllDirectories).Length;
-			
-			DirectoryInfo informacionDirectorio = new DirectoryInfo(oSeleccionarCarpeta.SelectedPath);
-			DriveInfo informacionDispositivo = new DriveInfo(oSeleccionarCarpeta.SelectedPath);
-			var ofrmEscaneoCarpeta = new frmEscaneandoCarpeta();
-			
-			ofrmEscaneoCarpeta.txtUbicacion.Text = informacionDirectorio.Name;
-			ofrmEscaneoCarpeta.lblTamanoValor.Text = FormatSizeExtended(GetDirectorySize(oSeleccionarCarpeta.SelectedPath.ToString()));
-			ofrmEscaneoCarpeta.lblEtiquetaUnidad.Text = informacionDispositivo.VolumeLabel;
-			ofrmEscaneoCarpeta.lblSistemaArchivosValor.Text = informacionDispositivo.DriveFormat;
-			ofrmEscaneoCarpeta.lblTipoValor.Text = informacionDispositivo.DriveType.ToString();
-			ofrmEscaneoCarpeta.lblNumeroSerieUnidad.Text = GetHDDSerial().ToUpper();
-			ofrmEscaneoCarpeta.lblCapacidadDispositivoValor.Text = FormatSizeExtended(informacionDispositivo.TotalSize);
-			ofrmEscaneoCarpeta.lblEspacioLibreDispositivoValor.Text = FormatSizeExtended(informacionDispositivo.AvailableFreeSpace);
-			ofrmEscaneoCarpeta.lblContenidoDispositivoValor.Text = String.Concat(files, " Archivos, ", dirs, " Carpetas");
-			ofrmEscaneoCarpeta.progressBar1.Value = 100;
-			ofrmEscaneoCarpeta.ShowDialog();
-			OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Grupo6.accdb");
-			
-			string sqlQuery = "INSERT INTO ESCANEOS ([NOMBRE]," +
-													"[ARCHIVOS]," +
-													"CARPETAS," +
-													"TAMANO," +
-													"CAPACIDAD," +
-													"ESPACIOLIBRE," +
-													"SISTEMAARCHIVOS," +
-													"NUMEROSERIE, TIPO, ETIQUETA, ID_CATEGORIA, ID_LOCACION, PRESTAMO, FECHA_ESCANEO, LETRA_DISPOSITIVO, COMENTARIO, NOMBRE_PC) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-			
-			
-			
-			
-			using (OleDbCommand cmd = new OleDbCommand(sqlQuery, conexion)) {
-				conexion.Open();
-				cmd.Parameters.AddWithValue("@NOMBRE", informacionDirectorio.Name);
-				cmd.Parameters.AddWithValue("@ARCHIVOS", files);
-				cmd.Parameters.AddWithValue("@CARPETAS", dirs);
-				cmd.Parameters.AddWithValue("@TAMANO", GetDirectorySize(oSeleccionarCarpeta.SelectedPath.ToString()));
-				cmd.Parameters.AddWithValue("@CAPACIDAD", informacionDispositivo.TotalSize);
-				cmd.Parameters.AddWithValue("@ESPACIOLIBRE", informacionDispositivo.AvailableFreeSpace);
-				cmd.Parameters.AddWithValue("@SISTEMAARCHIVOS", informacionDispositivo.DriveFormat);
-				cmd.Parameters.AddWithValue("@NUMEROSERIE", GetHDDSerial().ToUpper());
-				cmd.Parameters.AddWithValue("@TIPO", informacionDispositivo.DriveType.ToString());
-				cmd.Parameters.AddWithValue("@ETIQUETA", oSeleccionarCarpeta.SelectedPath);
-				cmd.Parameters.AddWithValue("@ID_CATEGORIA", 1);
-				cmd.Parameters.AddWithValue("@ID_LOCACION", 1);
-				cmd.Parameters.AddWithValue("@PRESTAMO", "");
-				cmd.Parameters.AddWithValue("@FECHA_ESCANEO", OleDbType.Date).Value = DateTime.Now.ToString();
-				cmd.Parameters.AddWithValue("@LETRA_DISPOSITIVO", informacionDirectorio.Root.Name);
-				cmd.Parameters.AddWithValue("@COMENTARIO", ofrmEscaneoCarpeta.txtComentario.Text);
-				cmd.Parameters.AddWithValue("@NOMBRE_PC", Environment.MachineName);
+			if (oSeleccionarCarpeta.ShowDialog() == DialogResult.OK)
+			{
+				int files = Directory.GetFiles(oSeleccionarCarpeta.SelectedPath, "*.*", SearchOption.AllDirectories).Length;
+				String[] rutas = Directory.GetFiles(oSeleccionarCarpeta.SelectedPath, "*", SearchOption.AllDirectories);
+				String[] directorios = Directory.GetDirectories(oSeleccionarCarpeta.SelectedPath, "*", SearchOption.AllDirectories);
+				int dirs = Directory.GetDirectories(oSeleccionarCarpeta.SelectedPath, "*", SearchOption.AllDirectories).Length;
 				
-				cmd.ExecuteNonQuery();
+				DirectoryInfo informacionDirectorio = new DirectoryInfo(oSeleccionarCarpeta.SelectedPath);
+				DriveInfo informacionDispositivo = new DriveInfo(oSeleccionarCarpeta.SelectedPath);
+				var ofrmEscaneoCarpeta = new frmEscaneandoCarpeta();
+				Debug.WriteLine("ruta global: " + informacionDirectorio);
+				this.rutaPrincipal = informacionDirectorio;
+					
+					
+				ofrmEscaneoCarpeta.txtUbicacion.Text = informacionDirectorio.Name;
+				ofrmEscaneoCarpeta.lblTamanoValor.Text = FormatSizeExtended(GetDirectorySize(oSeleccionarCarpeta.SelectedPath.ToString()));
+				ofrmEscaneoCarpeta.lblEtiquetaUnidad.Text = informacionDispositivo.VolumeLabel;
+				ofrmEscaneoCarpeta.lblSistemaArchivosValor.Text = informacionDispositivo.DriveFormat;
+				ofrmEscaneoCarpeta.lblTipoValor.Text = informacionDispositivo.DriveType.ToString();
+				ofrmEscaneoCarpeta.lblNumeroSerieUnidad.Text = GetHDDSerial().ToUpper();
+				ofrmEscaneoCarpeta.lblCapacidadDispositivoValor.Text = FormatSizeExtended(informacionDispositivo.TotalSize);
+				ofrmEscaneoCarpeta.lblEspacioLibreDispositivoValor.Text = FormatSizeExtended(informacionDispositivo.AvailableFreeSpace);
+				ofrmEscaneoCarpeta.lblContenidoDispositivoValor.Text = String.Concat(files, " Archivos, ", dirs, " Carpetas");
+				ofrmEscaneoCarpeta.progressBar1.Value = 100;
+				ofrmEscaneoCarpeta.ShowDialog();
+				OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Grupo6.accdb");
+				
+				string sqlQuery = "INSERT INTO ESCANEOS ([NOMBRE]," +
+														"[ARCHIVOS]," +
+														"CARPETAS," +
+														"TAMANO," +
+														"CAPACIDAD," +
+														"ESPACIOLIBRE," +
+														"SISTEMAARCHIVOS," +
+														"NUMEROSERIE, TIPO, ETIQUETA, ID_CATEGORIA, ID_LOCACION, PRESTAMO, FECHA_ESCANEO, LETRA_DISPOSITIVO, COMENTARIO, NOMBRE_PC) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				
+				
+				
+				
+				using (OleDbCommand cmd = new OleDbCommand(sqlQuery, conexion)) {
+					conexion.Open();
+					cmd.Parameters.AddWithValue("@NOMBRE", informacionDirectorio.Name);
+					cmd.Parameters.AddWithValue("@ARCHIVOS", files);
+					cmd.Parameters.AddWithValue("@CARPETAS", dirs);
+					cmd.Parameters.AddWithValue("@TAMANO", GetDirectorySize(oSeleccionarCarpeta.SelectedPath.ToString()));
+					cmd.Parameters.AddWithValue("@CAPACIDAD", informacionDispositivo.TotalSize);
+					cmd.Parameters.AddWithValue("@ESPACIOLIBRE", informacionDispositivo.AvailableFreeSpace);
+					cmd.Parameters.AddWithValue("@SISTEMAARCHIVOS", informacionDispositivo.DriveFormat);
+					cmd.Parameters.AddWithValue("@NUMEROSERIE", GetHDDSerial().ToUpper());
+					cmd.Parameters.AddWithValue("@TIPO", informacionDispositivo.DriveType.ToString());
+					cmd.Parameters.AddWithValue("@ETIQUETA", oSeleccionarCarpeta.SelectedPath);
+					cmd.Parameters.AddWithValue("@ID_CATEGORIA", 1);
+					cmd.Parameters.AddWithValue("@ID_LOCACION", 1);
+					cmd.Parameters.AddWithValue("@PRESTAMO", "");
+					cmd.Parameters.AddWithValue("@FECHA_ESCANEO", OleDbType.Date).Value = DateTime.Now.ToString();
+					cmd.Parameters.AddWithValue("@LETRA_DISPOSITIVO", informacionDirectorio.Root.Name);
+					cmd.Parameters.AddWithValue("@COMENTARIO", ofrmEscaneoCarpeta.txtComentario.Text);
+					cmd.Parameters.AddWithValue("@NOMBRE_PC", Environment.MachineName);
+					
+					cmd.ExecuteNonQuery();
+				}
+				
+				foreach (var ruta in rutas) {
+					Debug.WriteLine(ruta);
+				}
+				
+				foreach (var directorio in directorios) {
+					Debug.WriteLine(directorio);
+				}
+				treeView1.Nodes.Clear();
+//				treeView1.Nodes.Add(PopulateTreeNode2(directorios, "\\"));
+				
+				conexion.Close();
+				
+				RefrescaEscaneos();
 			}
-			
-			foreach (var ruta in rutas) {
-				Debug.WriteLine(ruta);
-			}
-			
-			foreach (var directorio in directorios) {
-				Debug.WriteLine(directorio);
-			}
-			treeView1.Nodes.Clear();
-			treeView1.Nodes.Add(PopulateTreeNode2(directorios, "\\"));
-			
-			conexion.Close();
-			
-			RefrescaEscaneos();
-			
  
 		}
 		
+//		private TreeNode crearArbol(DirectoryInfo directoryInfo)
+//		{
+//			TreeNode treeNode = new TreeNode(directoryInfo.Name);
+//
+//			foreach (var item in directoryInfo.GetDirectories())
+//			{
+//				treeNode.Nodes.Add(crearArbol(item));
+//			}
+//			foreach (var item in directoryInfo.GetFiles())
+//			{
+//				treeNode.Nodes.Add(new TreeNode(item.Name));
+//			}
+//			return treeNode;
+//		}
+		
 		private TreeNode crearArbol(DirectoryInfo directoryInfo)
 		{
+			string itemSeleccionado = listView1.SelectedItems[0].SubItems[0].Text;
+
 			TreeNode treeNode = new TreeNode(directoryInfo.Name);
+			Debug.WriteLine(treeNode);
+			Debug.WriteLine("directoryInfo: " + directoryInfo);
+			Debug.WriteLine("directoryInfo NAME: " + directoryInfo.FullName);
 
 			foreach (var item in directoryInfo.GetDirectories())
 			{
+				Debug.WriteLine("item: "+item);
+				Debug.WriteLine("nodo: "+treeNode);
+				Debug.WriteLine("directoryInfo: " + directoryInfo);
+
 				treeNode.Nodes.Add(crearArbol(item));
+				queryEstructura_escaneosCarpetas(item, itemSeleccionado, directoryInfo);
 			}
 			foreach (var item in directoryInfo.GetFiles())
 			{
-				treeNode.Nodes.Add(new TreeNode(item.Name));
+				//treeNode.Nodes.Add(new TreeNode(item.Name));
+				queryEstructura_escaneosFile(item, itemSeleccionado, directoryInfo);
 			}
+
+
 			return treeNode;
 		}
+		
 		private static long GetDirectorySize(string p)
 		{
 			// 1.
@@ -179,6 +213,60 @@ namespace CatalogadorArchivos
 		
 		}
 	
+		public void queryEstructura_escaneosFile(FileInfo item, string itemSeleccionado, DirectoryInfo directoryInfo)
+		{
+			OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Grupo6.accdb");
+
+			string sqlQuery = "INSERT INTO ESTRUCTURA_ESCANEOS ([ID_ESCANEO]," +
+												"[RUTA]," +
+												"[NOMBRE]," +
+												"[TIPO]," +
+											"FECHA_MODIFICACION," +
+										"COMENTARIO) values (?,?,?,?,?,?)";
+
+			using (OleDbCommand cmd = new OleDbCommand(sqlQuery, conexion))
+			{
+				conexion.Open();
+				cmd.Parameters.AddWithValue("@ID_ESCANEO", itemSeleccionado);
+				cmd.Parameters.AddWithValue("@RUTA", directoryInfo.FullName);
+				cmd.Parameters.AddWithValue("@NOMBRE", item);
+				cmd.Parameters.AddWithValue("@TIPO", item.Extension);
+				cmd.Parameters.AddWithValue("@FECHA_MODIFICACION", OleDbType.Date).Value = item.LastWriteTime.ToString();
+				cmd.Parameters.AddWithValue("@COMENTARIO", "");
+
+				cmd.ExecuteNonQuery();
+			}
+			conexion.Close();
+
+		}
+		
+		
+		public void queryEstructura_escaneosCarpetas(DirectoryInfo item, string itemSeleccionado, DirectoryInfo directoryInfo)
+		{
+			OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Grupo6.accdb");
+
+			string sqlQuery = "INSERT INTO ESTRUCTURA_ESCANEOS ([ID_ESCANEO]," +
+												"[RUTA]," +
+												"[NOMBRE]," +
+											"FECHA_MODIFICACION," +
+										"COMENTARIO) values (?,?,?,?,?)";
+
+			using (OleDbCommand cmd = new OleDbCommand(sqlQuery, conexion))
+			{
+				conexion.Open();
+				cmd.Parameters.AddWithValue("@ID_ESCANEO", itemSeleccionado);
+				cmd.Parameters.AddWithValue("@RUTA", directoryInfo.FullName);
+				cmd.Parameters.AddWithValue("@NOMBRE", item);
+				cmd.Parameters.AddWithValue("@FECHA_MODIFICACION", OleDbType.Date).Value = DateTime.Now.ToString();
+				cmd.Parameters.AddWithValue("@COMENTARIO", "");
+
+				cmd.ExecuteNonQuery();
+			}
+			conexion.Close();
+
+		}
+		
+		
 		public string GetHDDSerial()
 		{
 			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_PhysicalMedia");
@@ -261,10 +349,7 @@ namespace CatalogadorArchivos
 			
 		}
 		
-		void listView1_ItemActivate(object sender, EventArgs e)
-		{
-			
-		}
+		
 		
 		void tsmiIconos_Click(object sender, EventArgs e)
 		{
@@ -295,6 +380,10 @@ namespace CatalogadorArchivos
 				escaneoSeleccionado = Convert.ToInt32(e.Item.SubItems[0].Text);
 				tssbPropiedades.Enabled = true;
 				tssbEliminar.Enabled = true;
+				DirectoryInfo informacionDirectorio = new DirectoryInfo(e.Item.SubItems[10].Text);
+//				DriveInfo informacionDispositivo = new DriveInfo(oSeleccionarCarpeta.SelectedPath);
+				Debug.WriteLine("ruta global: " + informacionDirectorio);
+				this.rutaPrincipal = informacionDirectorio;
 			}else {
 				tssbPropiedades.Enabled = false;
 				tssbEliminar.Enabled = false;
@@ -304,6 +393,11 @@ namespace CatalogadorArchivos
 		{
 			this.Close();
 		}
+		/// <summary>
+		/// Elimina la entrada seleccionada y refresca la lista de unidades escaneadas
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		void tssbEliminar_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show("¿Estás seguro que quieres eliminar este disco?","Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes){
@@ -311,7 +405,89 @@ namespace CatalogadorArchivos
 				RefrescaEscaneos();
 			}
 		}
-		
-		
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		void listView2_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			string itemSeleccionadoNombre = listView2.SelectedItems[0].SubItems[0].Text;
+
+			//DirectoryInfo informacionDirectorio = new DirectoryInfo(itemSeleccinado);
+
+			frmPropiedadesArchivos propiedadesArchivos = new frmPropiedadesArchivos();
+			propiedadesArchivos.txtUbicacion.Text = itemSeleccionadoNombre;
+			propiedadesArchivos.ShowDialog();
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		void listView1_MouseClick(object sender, MouseEventArgs e)
+		{
+			listView2.Items.Clear();
+
+			string itemSeleccinado = listView1.SelectedItems[0].SubItems[10].Text;
+
+			DirectoryInfo informacionDirectorio = new DirectoryInfo(itemSeleccinado);
+
+			treeView1.Nodes.Clear();
+			Debug.WriteLine("item seleccinado: "+itemSeleccinado);
+			Debug.WriteLine("informacion directorio: "+informacionDirectorio);
+			treeView1.Nodes.Add(crearArbol(informacionDirectorio));	
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="rutaGlobal"></param>
+		public void RefrescaEscaneosArbol(string rutaGlobal)
+		{
+			listView2.Items.Clear();
+			string ruta = rutaGlobal;
+			OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Grupo6.accdb");
+			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT ESTRUCTURA_ESCANEOS.NOMBRE as NOMBRE, ESTRUCTURA_ESCANEOS.TIPO as TIPO, ESTRUCTURA_ESCANEOS.FECHA_MODIFICACION as FECHA_MODIFICACION, ESTRUCTURA_ESCANEOS.COMENTARIO as COMENTARIO FROM ESTRUCTURA_ESCANEOS, ESCANEOS WHERE ESTRUCTURA_ESCANEOS.ID_ESCANEO = " + escaneoSeleccionado.ToString(), conexion);
+
+			DataSet d = new DataSet();
+
+			adapter.Fill(d);
+
+
+			foreach (DataRow row in d.Tables[0].Rows)
+			{
+				String[] fila = new String[5];
+				ListViewItem itm;
+				fila[0] = row["NOMBRE"].ToString();
+				fila[1] = "";
+				fila[2] = row["TIPO"].ToString();
+				fila[3] = row["FECHA_MODIFICACION"].ToString();
+				fila[4] = row["COMENTARIO"].ToString();
+				itm = new ListViewItem(fila);
+				listView2.Items.Add(itm);
+
+			}
+
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			Debug.WriteLine("nombre de carpeta: " + (this.rutaPrincipal).Name);
+			Debug.WriteLine("ruta Principal: " + (this.rutaPrincipal).ToString());
+			string rutastring = (this.rutaPrincipal).ToString();
+			string quitarNombre = rutastring.Replace((this.rutaPrincipal).Name, "");
+
+			Debug.WriteLine("ruta string: " + quitarNombre);
+			string rutaGlobal = quitarNombre + treeView1.SelectedNode.FullPath;
+			Debug.WriteLine("ruta final: " + rutaGlobal);
+
+			//Process.Start(rutaGlobal);
+
+			RefrescaEscaneosArbol(rutaGlobal);
+		}
 	}
 }
