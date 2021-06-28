@@ -94,38 +94,38 @@ namespace CatalogadorArchivos
 		void InitializeComponent(){
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Nodo1");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Nodo2");
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Nodo3");
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Nodo4");
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Nodo0", new System.Windows.Forms.TreeNode[] {
-			treeNode1,
-			treeNode2,
-			treeNode3,
-			treeNode4});
-			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Nodo1");
-			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Nodo0", new System.Windows.Forms.TreeNode[] {
-			treeNode6});
-			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Nodo3");
-			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Nodo4");
-			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Nodo5");
-			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Nodo6");
-			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Nodo2", new System.Windows.Forms.TreeNode[] {
-			treeNode8,
-			treeNode9,
-			treeNode10,
+			System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Nodo1");
+			System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Nodo2");
+			System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Nodo3");
+			System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Nodo4");
+			System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Nodo0", new System.Windows.Forms.TreeNode[] {
+			treeNode18,
+			treeNode19,
+			treeNode20,
+			treeNode21});
+			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Nodo1");
+			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Nodo0", new System.Windows.Forms.TreeNode[] {
 			treeNode11});
-			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Nodo7");
-			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Nodo8");
-			System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Nodo10");
-			System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Nodo9", new System.Windows.Forms.TreeNode[] {
-			treeNode15});
-			System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Nodo0", new System.Windows.Forms.TreeNode[] {
-			treeNode7,
-			treeNode12,
+			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Nodo3");
+			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Nodo4");
+			System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Nodo5");
+			System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Nodo6");
+			System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Nodo2", new System.Windows.Forms.TreeNode[] {
 			treeNode13,
 			treeNode14,
+			treeNode15,
 			treeNode16});
+			System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Nodo7");
+			System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Nodo8");
+			System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Nodo10");
+			System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Nodo9", new System.Windows.Forms.TreeNode[] {
+			treeNode32});
+			System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Nodo0", new System.Windows.Forms.TreeNode[] {
+			treeNode12,
+			treeNode17,
+			treeNode30,
+			treeNode31,
+			treeNode33});
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.archivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -479,18 +479,18 @@ namespace CatalogadorArchivos
 			this.treeView2.ItemHeight = 32;
 			this.treeView2.Location = new System.Drawing.Point(3, 3);
 			this.treeView2.Name = "treeView2";
-			treeNode1.Name = "Nodo1";
-			treeNode1.Text = "Nodo1";
-			treeNode2.Name = "Nodo2";
-			treeNode2.Text = "Nodo2";
-			treeNode3.Name = "Nodo3";
-			treeNode3.Text = "Nodo3";
-			treeNode4.Name = "Nodo4";
-			treeNode4.Text = "Nodo4";
-			treeNode5.Name = "Nodo0";
-			treeNode5.Text = "Nodo0";
+			treeNode18.Name = "Nodo1";
+			treeNode18.Text = "Nodo1";
+			treeNode19.Name = "Nodo2";
+			treeNode19.Text = "Nodo2";
+			treeNode20.Name = "Nodo3";
+			treeNode20.Text = "Nodo3";
+			treeNode21.Name = "Nodo4";
+			treeNode21.Text = "Nodo4";
+			treeNode22.Name = "Nodo0";
+			treeNode22.Text = "Nodo0";
 			this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-			treeNode5});
+			treeNode22});
 			this.treeView2.Size = new System.Drawing.Size(515, 269);
 			this.treeView2.TabIndex = 0;
 			// 
@@ -644,35 +644,35 @@ namespace CatalogadorArchivos
 			this.treeView1.ItemHeight = 24;
 			this.treeView1.Location = new System.Drawing.Point(0, 0);
 			this.treeView1.Name = "treeView1";
-			treeNode6.Name = "Nodo1";
-			treeNode6.Text = "Nodo1";
-			treeNode7.ImageIndex = 1;
-			treeNode7.Name = "Nodo0";
-			treeNode7.Text = "Nodo0";
-			treeNode8.Name = "Nodo3";
-			treeNode8.Text = "Nodo3";
-			treeNode9.Name = "Nodo4";
-			treeNode9.Text = "Nodo4";
-			treeNode10.Name = "Nodo5";
-			treeNode10.Text = "Nodo5";
-			treeNode11.Name = "Nodo6";
-			treeNode11.Text = "Nodo6";
+			treeNode11.Name = "Nodo1";
+			treeNode11.Text = "Nodo1";
 			treeNode12.ImageIndex = 1;
-			treeNode12.Name = "Nodo2";
-			treeNode12.Text = "Nodo2";
-			treeNode13.Name = "Nodo7";
-			treeNode13.Text = "Nodo7";
-			treeNode14.Name = "Nodo8";
-			treeNode14.Text = "Nodo8";
-			treeNode15.Name = "Nodo10";
-			treeNode15.Text = "Nodo10";
-			treeNode16.ImageIndex = 1;
-			treeNode16.Name = "Nodo9";
-			treeNode16.Text = "Nodo9";
-			treeNode17.Name = "Nodo0";
-			treeNode17.Text = "Nodo0";
+			treeNode12.Name = "Nodo0";
+			treeNode12.Text = "Nodo0";
+			treeNode13.Name = "Nodo3";
+			treeNode13.Text = "Nodo3";
+			treeNode14.Name = "Nodo4";
+			treeNode14.Text = "Nodo4";
+			treeNode15.Name = "Nodo5";
+			treeNode15.Text = "Nodo5";
+			treeNode16.Name = "Nodo6";
+			treeNode16.Text = "Nodo6";
+			treeNode17.ImageIndex = 1;
+			treeNode17.Name = "Nodo2";
+			treeNode17.Text = "Nodo2";
+			treeNode30.Name = "Nodo7";
+			treeNode30.Text = "Nodo7";
+			treeNode31.Name = "Nodo8";
+			treeNode31.Text = "Nodo8";
+			treeNode32.Name = "Nodo10";
+			treeNode32.Text = "Nodo10";
+			treeNode33.ImageIndex = 1;
+			treeNode33.Name = "Nodo9";
+			treeNode33.Text = "Nodo9";
+			treeNode34.Name = "Nodo0";
+			treeNode34.Text = "Nodo0";
 			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-			treeNode17});
+			treeNode34});
 			this.treeView1.SelectedImageIndex = 0;
 			this.treeView1.Size = new System.Drawing.Size(409, 243);
 			this.treeView1.TabIndex = 0;
@@ -828,6 +828,5 @@ namespace CatalogadorArchivos
 			this.PerformLayout();
 
 		}
-		}
 	}
-	
+}

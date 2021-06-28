@@ -52,9 +52,10 @@ namespace CatalogadorArchivos
 				lblSistemaArchivosValor.Text = row["SISTEMAARCHIVOS"].ToString();
 				lblTipoValor.Text = row["TIPO"].ToString();
 				lblEtiquetaUnidad.Text = row["ETIQUETA"].ToString();
-				lblAccedidoValor.Text = row["FECHA_ESCANEO"].ToString();
+				lblAccedidoValor.Text = String.Format("{0:dddd, dd MMMM yyyy, HH:mm:ss}", row["FECHA_ESCANEO"]);
 				lblLetraUnidad.Text = row["LETRA_DISPOSITIVO"].ToString();
 				txtComentario.Text = row["COMENTARIO"].ToString();
+				lblNombreEquipo.Text = row["NOMBRE_PC"].ToString();
 				this.ShowDialog();
 			}
 		}

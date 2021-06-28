@@ -27,7 +27,6 @@ namespace CatalogadorArchivos
 			conexion.Open();
 			cmd.ExecuteNonQuery();
 			conexion.Close();
-			
 		}
 	}
 }

@@ -39,7 +39,7 @@ namespace CatalogadorArchivos
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label10;
 		public System.Windows.Forms.Label lblLetraUnidad;
-		public System.Windows.Forms.Label label14;
+		public System.Windows.Forms.Label lblNombreEquipo;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label6;
@@ -68,6 +68,7 @@ namespace CatalogadorArchivos
 		}
 		
 		void InitializeComponent(){
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPropiedadesEscaneos));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.txtComentario = new System.Windows.Forms.TextBox();
 			this.lblComentario = new System.Windows.Forms.Label();
@@ -84,7 +85,7 @@ namespace CatalogadorArchivos
 			this.lblAccedido = new System.Windows.Forms.Label();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.lblLetraUnidad = new System.Windows.Forms.Label();
-			this.label14 = new System.Windows.Forms.Label();
+			this.lblNombreEquipo = new System.Windows.Forms.Label();
 			this.lblSistemaArchivosValor = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -243,7 +244,7 @@ namespace CatalogadorArchivos
 			// groupBox3
 			// 
 			this.groupBox3.Controls.Add(this.lblLetraUnidad);
-			this.groupBox3.Controls.Add(this.label14);
+			this.groupBox3.Controls.Add(this.lblNombreEquipo);
 			this.groupBox3.Controls.Add(this.lblSistemaArchivosValor);
 			this.groupBox3.Controls.Add(this.label13);
 			this.groupBox3.Controls.Add(this.label4);
@@ -270,13 +271,13 @@ namespace CatalogadorArchivos
 			this.lblLetraUnidad.TabIndex = 6;
 			this.lblLetraUnidad.Text = "label1";
 			// 
-			// label14
+			// lblNombreEquipo
 			// 
-			this.label14.Location = new System.Drawing.Point(336, 56);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(96, 23);
-			this.label14.TabIndex = 1;
-			this.label14.Text = "label1";
+			this.lblNombreEquipo.Location = new System.Drawing.Point(336, 56);
+			this.lblNombreEquipo.Name = "lblNombreEquipo";
+			this.lblNombreEquipo.Size = new System.Drawing.Size(96, 23);
+			this.lblNombreEquipo.TabIndex = 1;
+			this.lblNombreEquipo.Text = "label1";
 			// 
 			// lblSistemaArchivosValor
 			// 
@@ -402,9 +403,11 @@ namespace CatalogadorArchivos
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
 			this.pictureBox1.Location = new System.Drawing.Point(16, 8);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(40, 48);
+			this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 6;
 			this.pictureBox1.TabStop = false;
 			// 

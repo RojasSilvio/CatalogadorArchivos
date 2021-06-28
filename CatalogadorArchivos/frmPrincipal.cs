@@ -57,7 +57,7 @@ namespace CatalogadorArchivos
 			ofrmEscaneoCarpeta.lblEtiquetaUnidad.Text = informacionDispositivo.VolumeLabel;
 			ofrmEscaneoCarpeta.lblSistemaArchivosValor.Text = informacionDispositivo.DriveFormat;
 			ofrmEscaneoCarpeta.lblTipoValor.Text = informacionDispositivo.DriveType.ToString();
-			ofrmEscaneoCarpeta.lblNumeroSerieUnidad.Text = GetHDDSerial();
+			ofrmEscaneoCarpeta.lblNumeroSerieUnidad.Text = GetHDDSerial().ToUpper();
 			ofrmEscaneoCarpeta.lblCapacidadDispositivoValor.Text = FormatSizeExtended(informacionDispositivo.TotalSize);
 			ofrmEscaneoCarpeta.lblEspacioLibreDispositivoValor.Text = FormatSizeExtended(informacionDispositivo.AvailableFreeSpace);
 			ofrmEscaneoCarpeta.lblContenidoDispositivoValor.Text = String.Concat(files, " Archivos, ", dirs, " Carpetas");
@@ -72,7 +72,7 @@ namespace CatalogadorArchivos
 													"CAPACIDAD," +
 													"ESPACIOLIBRE," +
 													"SISTEMAARCHIVOS," +
-													"NUMEROSERIE, TIPO, ETIQUETA, ID_CATEGORIA, ID_LOCACION, PRESTAMO, FECHA_ESCANEO, LETRA_DISPOSITIVO, COMENTARIO) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+													"NUMEROSERIE, TIPO, ETIQUETA, ID_CATEGORIA, ID_LOCACION, PRESTAMO, FECHA_ESCANEO, LETRA_DISPOSITIVO, COMENTARIO, NOMBRE_PC) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			
 			
 			
@@ -95,6 +95,7 @@ namespace CatalogadorArchivos
 				cmd.Parameters.AddWithValue("@FECHA_ESCANEO", OleDbType.Date).Value = DateTime.Now.ToString();
 				cmd.Parameters.AddWithValue("@LETRA_DISPOSITIVO", informacionDirectorio.Root.Name);
 				cmd.Parameters.AddWithValue("@COMENTARIO", ofrmEscaneoCarpeta.txtComentario.Text);
+				cmd.Parameters.AddWithValue("@NOMBRE_PC", Environment.MachineName);
 				
 				cmd.ExecuteNonQuery();
 			}
