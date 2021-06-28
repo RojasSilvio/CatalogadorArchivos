@@ -220,9 +220,10 @@ namespace CatalogadorArchivos
 			string sqlQuery = "INSERT INTO ESTRUCTURA_ESCANEOS ([ID_ESCANEO]," +
 												"[RUTA]," +
 												"[NOMBRE]," +
+												"[TAMANO]," +
 												"[TIPO]," +
 											"FECHA_MODIFICACION," +
-										"COMENTARIO) values (?,?,?,?,?,?)";
+										"COMENTARIO) values (?,?,?,?,?,?,?)";
 
 			using (OleDbCommand cmd = new OleDbCommand(sqlQuery, conexion))
 			{
@@ -230,6 +231,7 @@ namespace CatalogadorArchivos
 				cmd.Parameters.AddWithValue("@ID_ESCANEO", itemSeleccionado);
 				cmd.Parameters.AddWithValue("@RUTA", directoryInfo.FullName);
 				cmd.Parameters.AddWithValue("@NOMBRE", item);
+				cmd.Parameters.AddWithValue("@TAMANO", GetDirectorySize(directoryInfo.FullName));
 				cmd.Parameters.AddWithValue("@TIPO", item.Extension);
 				cmd.Parameters.AddWithValue("@FECHA_MODIFICACION", OleDbType.Date).Value = item.LastWriteTime.ToString();
 				cmd.Parameters.AddWithValue("@COMENTARIO", "");
@@ -447,7 +449,7 @@ namespace CatalogadorArchivos
 			listView2.Items.Clear();
 			string ruta = rutaGlobal;
 			OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Grupo6.accdb");
-			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT ESTRUCTURA_ESCANEOS.NOMBRE as NOMBRE, ESTRUCTURA_ESCANEOS.TIPO as TIPO, ESTRUCTURA_ESCANEOS.FECHA_MODIFICACION as FECHA_MODIFICACION, ESTRUCTURA_ESCANEOS.COMENTARIO as COMENTARIO FROM ESTRUCTURA_ESCANEOS, ESCANEOS WHERE ESTRUCTURA_ESCANEOS.ID_ESCANEO = " + escaneoSeleccionado.ToString(), conexion);
+			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT ESTRUCTURA_ESCANEOS.NOMBRE as NOMBRE,ESTRUCTURA_ESCANEOS.TAMANO as TAMANO, ESTRUCTURA_ESCANEOS.TIPO as TIPO, ESTRUCTURA_ESCANEOS.FECHA_MODIFICACION as FECHA_MODIFICACION, ESTRUCTURA_ESCANEOS.COMENTARIO as COMENTARIO FROM ESTRUCTURA_ESCANEOS, ESCANEOS WHERE ESTRUCTURA_ESCANEOS.ID_ESCANEO = " + escaneoSeleccionado.ToString(), conexion);
 
 			DataSet d = new DataSet();
 
@@ -459,8 +461,8 @@ namespace CatalogadorArchivos
 				String[] fila = new String[5];
 				ListViewItem itm;
 				fila[0] = row["NOMBRE"].ToString();
-				fila[1] = "";
-				fila[2] = row["TIPO"].ToString();
+				fila[1] = FormatSize(Convert.ToInt64(row["TAMANO"].ToString()));
+				fila[2] = row["TIPO"].ToString().ToLower();
 				fila[3] = row["FECHA_MODIFICACION"].ToString();
 				fila[4] = row["COMENTARIO"].ToString();
 				itm = new ListViewItem(fila);
