@@ -53,23 +53,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CatalogadorArchivos.cs" />
-    <Compile Include="frmBuscar.cs" />
+    <Compile Include="frmBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBuscar.Designer.cs">
       <DependentUpon>frmBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEscaneandoCarpeta.cs" />
+    <Compile Include="frmEscaneandoCarpeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmEscaneandoCarpeta.Designer.cs">
       <DependentUpon>frmEscaneandoCarpeta.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrincipal.cs" />
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPropiedadesArchivos.cs" />
+    <Compile Include="frmPropiedadesArchivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPropiedadesArchivos.Designer.cs">
       <DependentUpon>frmPropiedadesArchivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPropiedadesEscaneos.cs" />
+    <Compile Include="frmPropiedadesEscaneos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPropiedadesEscaneos.Designer.cs">
       <DependentUpon>frmPropiedadesEscaneos.cs</DependentUpon>
     </Compile>
@@ -100,7 +110,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="resources" />
+    <Folder Include="resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

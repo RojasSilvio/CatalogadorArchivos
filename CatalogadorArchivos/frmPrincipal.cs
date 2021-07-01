@@ -104,7 +104,28 @@ namespace CatalogadorArchivos
 					
 					cmd.ExecuteNonQuery();
 				}
+				//queryEstructura_escaneosCarpetas(item, escaneoSeleccionado, directoryInfo);
 				
+				//string sqlQuery = "INSERT INTO ESTRUCTURA_ESCANEOS ([ID_ESCANEO]," +
+				//									"[RUTA]," +
+				//									"[NOMBRE]," +
+				//								"FECHA_MODIFICACION," +
+				//							"COMENTARIO) values (?,?,?,?,?)";
+
+				//using (OleDbCommand cmd = new OleDbCommand(sqlQuery, conexion))
+				//{
+				//	conexion.Open();
+				//	cmd.Parameters.AddWithValue("@ID_ESCANEO", itemSeleccionado);
+				//	cmd.Parameters.AddWithValue("@RUTA", directoryInfo.Name);
+				//	cmd.Parameters.AddWithValue("@NOMBRE", item);
+				//	cmd.Parameters.AddWithValue("@FECHA_MODIFICACION", OleDbType.Date).Value = DateTime.Now.ToString();
+				//	cmd.Parameters.AddWithValue("@COMENTARIO", "");
+
+				//	cmd.ExecuteNonQuery();
+				//}
+				//conexion.Close();
+
+
 				foreach (var ruta in rutas) {
 					Debug.WriteLine(ruta);
 				}
@@ -148,12 +169,11 @@ namespace CatalogadorArchivos
 
 			foreach (var item in directoryInfo.GetDirectories())
 			{
-				Debug.WriteLine("item: "+item);
-				Debug.WriteLine("nodo: "+treeNode);
+				Debug.WriteLine("item: " + item);
+				Debug.WriteLine("nodo: " + treeNode);
 				Debug.WriteLine("directoryInfo: " + directoryInfo);
 
 				treeNode.Nodes.Add(crearArbol(item));
-				queryEstructura_escaneosCarpetas(item, itemSeleccionado, directoryInfo);
 			}
 			foreach (var item in directoryInfo.GetFiles())
 			{
@@ -229,7 +249,7 @@ namespace CatalogadorArchivos
 			{
 				conexion.Open();
 				cmd.Parameters.AddWithValue("@ID_ESCANEO", itemSeleccionado);
-				cmd.Parameters.AddWithValue("@RUTA", directoryInfo.FullName);
+				cmd.Parameters.AddWithValue("@RUTA", directoryInfo.Name);
 				cmd.Parameters.AddWithValue("@NOMBRE", item);
 				cmd.Parameters.AddWithValue("@TAMANO", GetDirectorySize(directoryInfo.FullName));
 				cmd.Parameters.AddWithValue("@TIPO", item.Extension);
@@ -246,7 +266,9 @@ namespace CatalogadorArchivos
 		public void queryEstructura_escaneosCarpetas(DirectoryInfo item, string itemSeleccionado, DirectoryInfo directoryInfo)
 		{
 			OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Grupo6.accdb");
-
+			Console.WriteLine("full nombre: "+directoryInfo.FullName);
+			Console.WriteLine("nombre: "+directoryInfo.Name);
+			Console.WriteLine("ToString: " + directoryInfo.ToString());
 			string sqlQuery = "INSERT INTO ESTRUCTURA_ESCANEOS ([ID_ESCANEO]," +
 												"[RUTA]," +
 												"[NOMBRE]," +
@@ -257,7 +279,7 @@ namespace CatalogadorArchivos
 			{
 				conexion.Open();
 				cmd.Parameters.AddWithValue("@ID_ESCANEO", itemSeleccionado);
-				cmd.Parameters.AddWithValue("@RUTA", directoryInfo.FullName);
+				cmd.Parameters.AddWithValue("@RUTA", directoryInfo.Name);
 				cmd.Parameters.AddWithValue("@NOMBRE", item);
 				cmd.Parameters.AddWithValue("@FECHA_MODIFICACION", OleDbType.Date).Value = DateTime.Now.ToString();
 				cmd.Parameters.AddWithValue("@COMENTARIO", "");
@@ -448,12 +470,18 @@ namespace CatalogadorArchivos
 		{
 			listView2.Items.Clear();
 			string ruta = rutaGlobal;
+			Console.WriteLine(""+ruta);
+			Console.WriteLine(escaneoSeleccionado.ToString());
 			OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|Grupo6.accdb");
-			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT ESTRUCTURA_ESCANEOS.NOMBRE as NOMBRE,ESTRUCTURA_ESCANEOS.TAMANO as TAMANO, ESTRUCTURA_ESCANEOS.TIPO as TIPO, ESTRUCTURA_ESCANEOS.FECHA_MODIFICACION as FECHA_MODIFICACION, ESTRUCTURA_ESCANEOS.COMENTARIO as COMENTARIO FROM ESTRUCTURA_ESCANEOS, ESCANEOS WHERE ESTRUCTURA_ESCANEOS.ID_ESCANEO = " + escaneoSeleccionado.ToString(), conexion);
+			OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT ESTRUCTURA_ESCANEOS.NOMBRE as NOMBRE, " +
+				"ESTRUCTURA_ESCANEOS.TAMANO as TAMANO, ESTRUCTURA_ESCANEOS.TIPO as TIPO, " +
+				"ESTRUCTURA_ESCANEOS.FECHA_MODIFICACION as FECHA_MODIFICACION, ESTRUCTURA_ESCANEOS.COMENTARIO as COMENTARIO " +
+				"FROM ESTRUCTURA_ESCANEOS, ESCANEOS WHERE ESTRUCTURA_ESCANEOS.RUTA = '" + ruta + "';", conexion);
 
 			DataSet d = new DataSet();
 
 			adapter.Fill(d);
+
 
 
 			foreach (DataRow row in d.Tables[0].Rows)
@@ -478,18 +506,22 @@ namespace CatalogadorArchivos
 		/// <param name="e"></param>
 		void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
-			Debug.WriteLine("nombre de carpeta: " + (this.rutaPrincipal).Name);
+			
+			Debug.WriteLine("nombre de carpeta: " + (this.rutaPrincipal).FullName);
 			Debug.WriteLine("ruta Principal: " + (this.rutaPrincipal).ToString());
 			string rutastring = (this.rutaPrincipal).ToString();
 			string quitarNombre = rutastring.Replace((this.rutaPrincipal).Name, "");
 
 			Debug.WriteLine("ruta string: " + quitarNombre);
 			string rutaGlobal = quitarNombre + treeView1.SelectedNode.FullPath;
+			Debug.WriteLine("ruta final: " + treeView1.SelectedNode.Name);
+			Debug.WriteLine("ruta final: " + treeView1.SelectedNode.Text);
+			string treviewtext = treeView1.SelectedNode.Text;
 			Debug.WriteLine("ruta final: " + rutaGlobal);
 
 			//Process.Start(rutaGlobal);
 
-			RefrescaEscaneosArbol(rutaGlobal);
+			RefrescaEscaneosArbol(treviewtext);
 		}
 	}
 }
